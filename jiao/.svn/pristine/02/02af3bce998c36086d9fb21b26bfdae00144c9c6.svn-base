@@ -1,0 +1,304 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+li {
+  list-style: none;
+}
+body {
+  background-color: #eaeaea;
+}
+#app {
+  -webkit-user-select: none;
+  -webkit-text-size-adjust: none;
+  font-family: helvetica;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+[v-cloak] {
+  display: none;
+}
+.bind_card_div{
+    width: 5.34rem;
+    height: 2.86rem;
+    background-image: url("../images/bank_card/band_card.png");
+    background-size: 100% 100%;
+    margin: 2.83rem 0.46rem 0.68rem 1.7rem;
+}
+.bind_card_div_p{
+    font-size: 0.28rem;
+    color:rgba(51,46,46,1);
+    text-align: center;
+}
+.bind_card_btn{
+    width: 6.18rem;
+    height: 1rem;
+    background-color:#EE4330;
+    margin-left: 0.67rem;
+    border-radius: 0.2rem;
+}
+.bind_card_btn_font{
+    width: 5.78rem;
+    height: 0.9rem;
+    margin:  0.68rem auto 0;
+    font-size: 0.42rem;
+    color: #FFFFFF;
+    display: flex;
+}
+.add_img{
+    width: 0.4rem;
+    height: 0.42rem;
+    margin-top: 0.3rem;
+    margin-left: 1.62rem;
+    margin-right: 0.2rem;
+}
+.bind_card_btn_font>span{
+    margin-top: 0.22rem;
+}
+/* 绑定银行卡1 */
+.bind_card_content{
+    width: 6.78rem;
+    height: 7.57rem;
+    margin: 0.5rem 0.36rem 0;
+}
+.bind_card_content_top{
+    width: 6.78rem;
+    height: 2.05rem;
+    background-color: #FFFFFF;
+    border-radius: 0.2rem 0.2rem 0 0;
+    display: flex;
+}
+.bind_card_content_top_info{
+    height: 1.45rem;
+    width: 6.21rem;
+    margin: 0.3rem 0.3rem 0 0.3rem;
+    
+}
+.bind_top_one{
+    border-bottom: 1px solid #E8E8e8;
+    font-size: 0.24rem;
+    color: #999999;
+    position: relative;
+}
+.bind_top_one>input{
+    width: 6.18rem;
+    height: 0.77rem;
+    font-size: 0.28rem;
+    font-weight:bold;
+    font-family: "微软雅黑";
+    color:#333333;
+    border-style: none;
+    outline: none;
+}
+.bind_top_two{
+     width: 6.18rem;
+     height: 0.28rem;
+     margin-top: 0.1rem;
+}
+.bind_top_two>img{
+    width: 0.28rem;
+    height: 0.28rem;
+    float: left;
+}
+.bind_top_two>p{
+    color:rgba(153,153,153,1);
+    font-size: 0.2rem;
+     float: left;
+     margin-left: 0.1rem;
+}
+.bind_card_content_bottom{
+    margin-top: 0.2rem;
+     width: 6.78rem;
+     height: 5.32rem;
+     background-color: #FFFFFF;
+     border-radius:  0 0 0.2rem 0.2rem;
+     display: flex;
+}
+.bind_card_content_bottom_info{
+    width: 6.18rem;
+    height: 4.52rem;
+    margin: 0.3rem 0.3rem 0.5rem 0.3rem;
+}
+.form_div_right_se{
+ -webkit-appearance: none;
+ border-style: none; 
+ width: 6.18rem; 
+ height: 0.77rem; 
+ font-size: 0.28rem;
+ font-weight: bold;
+ font-family: "微软雅黑";
+ background-color:#fff ;
+ color:#333333;
+}
+.form_div_right_se:active,.form_div_right_se:focus{
+    outline: none;
+}
+.down_img{
+    width: 0.28rem;
+    height: 0.28rem;
+    position: absolute;
+    top:0.54rem;
+    right:0;
+}
+.m{
+    margin-top: 0.15rem;
+}
+.bind_btn{
+    width: 6.18rem;
+    height: 1rem;
+    margin-top: 0.71rem;
+    background-color: #e8e8e8;
+    border-radius: 0.2rem;
+    color: #fff;
+    font-size: 0.42rem;
+    text-align: center;
+    line-height: 1rem;
+}
+.bind_btn2{
+    width: 6.18rem;
+    height: 1rem;
+    margin-top: 0.71rem;
+    border-radius: 0.2rem;
+    color: #fff;
+    font-size: 0.42rem;
+    text-align: center;
+    line-height: 1rem;
+}
+/* 弹窗 */
+.card{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card_success{
+    width: 5.5rem;
+    height: 7.01rem;
+    background-color: #fff;
+    border-radius: 0.2rem;
+    text-align: center;
+}
+.card_success>img{
+    width: 2.96rem;
+    height: 1.68;
+    margin: 0.5rem 1.27rem 0.2rem;
+}
+.card_success>p{
+    color: #EE4330;
+    font-size: 0.46rem;
+    font-weight: bold;
+}
+.success_btn{
+    width: 3.14rem;
+    height: 1.4rem;
+    margin: 0.7rem auto 0;
+    background-image: url("../images/bank_card/btn.png");
+    background-size: 100% 100%;
+    font-size: 0.42rem;
+    color: #fff;
+    font-weight: bold;
+    line-height: 1rem;
+}
+
+
+.card_center1{
+   width: 3rem;
+    height: 1rem;
+    background:rgba(51,51,51,0.6);
+    position: fixed;
+    top: 3.4rem;
+    left: 2rem;
+    z-index: 999;
+    border-radius: 0.2rem;
+    font-size: 0.24rem;
+    color: #fff;
+    line-height: 1rem;
+    text-align: center;
+}
+
+/* 绑定银行卡2 */
+.card_center{
+    width: 6.78rem;
+    height: 6.7rem;
+    background-color: #fff;
+    border-radius: 0.2rem;
+    margin: 0.5rem 0.36rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card_center_info{
+    width: 6.24rem;
+    height: 6rem;
+}
+.title{
+    font-size: 0.32rem;
+    font-weight: bold;
+}
+.card_img{
+    width: 6.24rem;
+    height: 3.7rem;
+    background-image: url("../images/bank_card/card.png");
+    background-size: 100% 100%;
+    margin-top: 0.3rem;
+    margin-bottom: 0.35rem;  
+    color: #fff;
+}
+.card_img_one{
+     font-size: 0.28rem;  
+     padding: 0.3rem;
+}
+.card_img_one>p{
+    margin-bottom: 0.2rem;
+    margin-right: 0.2rem;
+}
+
+.card_img_p_one{
+    font-size: 0.36rem;
+    font-weight: bold;
+    padding-left: 0.3rem;
+}
+.name_div{
+    width: 5rem;
+    display: flex;
+    margin: 0.8rem auto 0;
+    flex-direction: row-reverse;
+}
+.name_div>p{
+     font-size: 0.36rem;
+    font-weight: bold;
+}
+.exchange_btn{
+    width: 6.24rem;
+    height: 1.5rem;
+    background-image: url("../images/bank_card/exchange_btn.png");
+    background-size: 100% 100%;
+    display: flex;
+    color: #FFFFFF;
+    font-size: 0.42rem;
+     font-weight: 500;
+}
+.exchange_btn>img{
+    width: 0.42rem;
+    height: 0.32rem;
+    margin-top: 0.49rem;
+    margin-left: 1.7rem;
+    margin-right: 0.2rem;
+}
+.exchange_btn>p{
+    font-weight: 500;
+    line-height: 1.3rem;
+}

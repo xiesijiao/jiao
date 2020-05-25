@@ -1,0 +1,33 @@
+{
+  "data": 2,
+  "status": 1,
+  "info": [
+           
+            {
+              "price_now": 17.88,
+              "ticket1": "满100省35",
+              "img": "http://www.ck-zp.com/images/ysgoods/202002/1582774533346.jpg",
+              "ticket2": "会员立减35元",
+              "gid": 1,
+              "gtitle": "火龙果超级好",
+              "price_base": 32,
+              "has_ticket1": true,
+              "sid": 28,
+              "has_ticket2": true,
+              "glink": "http://m.tyfo.com/wap/goods/goodsGet.htm?goodsId=1258515&p_from=al&p_pid=12345&p_mid=82345"
+            },
+             {
+              "price_now": 17.88,
+              "ticket1": "满10000省355",
+              "img": "http://www.ck-zp.com/images/ysgoods/202002/1582774533346.jpg",
+              "ticket2": "会员立减3555元",
+              "gid": 1,
+              "gtitle": "火龙果超级好吃好吃火龙果火龙果超级好吃好吃火龙果火龙果超级好吃好吃火龙果",
+              "price_base": 32.33,
+              "has_ticket1": true,
+              "sid": 28.33,
+              "has_ticket2": true,
+              "glink": "http://m.tyfo.com/wap/goods/goodsGet.htm?goodsId=1258515&p_from=al&p_pid=12345&p_mid=82345"
+            }
+          ]
+}

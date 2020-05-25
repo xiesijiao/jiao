@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+* {margin: 0;padding: 0;}
+a {text-decoration: none;color: black;}
+li {list-style: none;}
+body {background-color: #e7e7e7;}
+#app {
+ font-size: 12px;-webkit-user-select: none;-webkit-text-size-adjust: none;font-family: helvetica;height: 100%;width: 100%;position: relative; margin: 0 auto;}
+[v-cloak]{
+    display: none;
+}
+/* manageramend */
+.header_div {height: 1rem;width: 100%;background-color: white;line-height: 0.88rem; display: flex;justify-content: center;align-items: center;}
+.header_div_content{height: 0.8rem;width: 7rem;display: flex;align-items: center;}
+.header_div_content>img{width: 0.4rem;height: 0.4rem;}
+.edit_box {width: 6.78rem;height: 12.5rem;margin: 0.5rem auto 0rem;}
+.edit_box_p {font-size: 0.42rem;font-family:PingFangSC-Medium, PingFang SC;font-weight:bold;color: rgba(51, 51, 51, 1);line-height: 0.59rem; display: inline-block; margin-bottom: 0.5rem;}
+.edit_content{width: 6.78rem;height: 10.89rem;margin: 0 auto;}
+.edit_form_div{width: 6.78rem;height: 1.2rem;border-bottom: 1px solid #9a9a9a;display: flex;}
+.edit_form_div_left{width: 0.2rem;}
+.name_img{width: 0.2rem;height: 0.2rem;margin-top: 0.1rem;}
+.edit_form_div_right{width: 6.18rem;margin-left: 0.1rem;}
+.edit_form_div_right_p{font-size: 0.28rem;color: #999999;}
+.edit_form_div_right_inp{ height: 0.6rem; background-color: #e7e7e7;outline: none;font-size: 0.28rem;font-family: "PingFangSC-Regular, sans-serif";border-style: none;margin-top: 0.12rem;margin-bottom: 0.2rem;}
+.edit_form_div_right>span{ width: 1rem;height: 0.4rem;margin-left: 1.5rem;color: red;}
+.edit_form_div_two{margin-top: 0.3rem;}
+.edit_form_div_right_se{
+    background-color: #e7e7e7;
+    border-style: none;
+    width: 6rem;
+     height: 0.4rem;
+     font-size: 0.28rem;
+     margin-top: 0.12rem;
+     margin-bottom: 0.2rem;
+     font-family: "PingFangSC-Medium, PingFang SC";}
+.submit_btn{width: 6.78rem;height: 1.5rem;background-image: url("../img/btn2222.png"); background-size: 100% 100%;margin: 0.5rem auto 0;text-align: center;color: white;font-size: 0.42rem;line-height: 1.2rem;}
+.verification_code_btn{font-size: 0.22rem;color: #d65243;border: none;background-color: #e7e7e7;outline: none; display: inline;margin-left: 1.5rem; }
+.foot_p{ margin: 0.33rem 0 0 1.1rem;font-size: 0.2rem;color: #929293;font-family: PingFangSC-Medium, PingFang SC;}
+
+
+/* 弹窗 */
+.card{width: 100%;height: 100%;background: rgba(0,0,0,0.6);position: fixed;top: 0;left: 0;z-index: 999;display: flex;justify-content: center;align-items: center;}
+.card_succeed{width: 5.06rem;height: 7.3rem;}
+.card_succeed_top_img{width: 5.06rem;height: 3.65rem;border-radius: 0.12rem;}
+.card_succeed_top_img_one{width: 5.06rem;height: 5.13rem;border-radius: 0.12rem;}
+.card_succeed_top_div{width: 5.06rem;height: 1.7rem;background-color: #3c3a3b;margin-top: -0.28rem;border-radius: 0.12rem;} 
+.card_succeed_top_div_p>h1{font-size: 0.32rem;color: white;font-family: '微软雅黑';text-align: center; padding-top: 0.47rem;padding-bottom: 0.22rem;}
+.card_succeed_top_div_p>p{font-size: 0.2rem;color: #d6ca04;display: block;text-align: center;}
+.card_succeed_top_btn{width: 5.06rem;height: 1.06rem;font-size: 0.32rem;border-radius: 0.12rem;background-color: white;border-style: none;color: #ff9297;margin-top: 0.86rem;}

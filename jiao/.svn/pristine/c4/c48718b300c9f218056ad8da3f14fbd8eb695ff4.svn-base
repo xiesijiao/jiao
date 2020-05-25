@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <a href="./task_list.html">任务列表</a>
+    <br>
+    <a href="./commodity_iteration.html">商品详情页(4月27日)</a>
+    <br>
+    <a href="./store.html">新聚合页</a>
+    <br>
+    <a href="./layUp_page.html">暂停使用(4月22日)</a>
+    <br>
+  
+    <a href="./theme_data.html">专题数据查询</a>
+    <br>
+    <a href="filiale_statistics.html">分公司统计数据</a>
+    <br>
+    <a href="./arrange_icons.html">icons</a>
+    <br>
+    <a href="./order_information.html">销量查询</a>
+    <br>
+    <a href="./aggregation_page.html">聚合页</a>
+    <br>
+    <a href="./phone.html">注册</a></a>
+    <br>
+    <a href="./activity.html">海报页面3.25日</a>
+    <br>
+    <a href="manager_info.html">店长页面展示(3.26日修改)</a>
+    <br>
+    <a href="assistant_info.html">店员页面展示(3.25日修改)</a>
+    <br>
+    <a href="./visual_two.html">查看数据页面 3.24日</a>
+    <br>
+    <a href="./visual_login.html">领导登陆页面 3.23日</a>
+    <br>
+    <a href="bind_card2.html">银行卡显示页面</a>
+    <br>
+    <a href="bind_card1.html">输入银行卡号4.7(修改)</a>
+    <br>
+    <a href="bind_card.html">绑定银行卡</a>
+    <br>
+    <a href="order.html">订单</a>
+    <br>
+   
+    <a href="detial.html">商品详情页面新</a>
+    <br>
+    <a href="publicity.html">奥莱专区</a>
+    <br>
+    <a href="personalCenter.html">个人中心</a>
+    <br>
+    <a href="commodity.html">电信专享券</a>
+    <br>
+    <a href="commoditytwo.html">省钱领券</a>
+    <br>
+    <a href="redeem.html">兑换码兑换</a>
+    <br>
+    <a href="registOne.html">注册</a>
+    <br>
+    <a href="registTwoManager.html">店长注册新</a>
+    <br>
+    <a href="registThreeManager.html">店长注册补充新</a>
+    <br>
+    <a href="registTwoAssistant.html">店员注册新</a>
+    <br>
+    <a href="./edit_manager_one.html">店长信息更改新</a>
+    <br>
+    <a href="./edit_assistant_one.html">店员信息更新</a>
+    <br>
+    
+   
+    <p>以下页面弃用：</p>
+    <br>
+    <a href="edit_assistant.html">店员信息修改</a>
+    <br>
+    <a href="edit_manager.html">店长信息修改</a>
+    <br>
+    <a href="registManager.html">店长注册</a>
+    <br>
+    <a href="registAssistant.html">店员注册</a>
+    <br>
+    <a href="registManagerRe.html">店长注册补充</a>
+    <br>
+    <a href="./yvue/detial.html">商品详情页面</a>
+    <a href="./drag2.html">拖拽</a>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+body {
+  background-color: #fff;
+}
+.task_list_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.task_list_header,
+.task_list_header > img {
+  height: 3.26rem;
+  width: 100%;
+}
+.task_list_content {
+  width: 100%;
+  background-color: #fff;
+  margin-top: -0.26rem;
+  border-radius: 0.15rem;
+}
+
+.task_list_content > li {
+  width: 6.9rem;
+  height: 2.12rem;
+  box-shadow: 0rem 0.2rem 0.2rem -0.2rem #e8e8e8;
+  margin: 0.4rem auto 0;
+}
+
+.task_list_content > li:last-child {
+  margin-bottom: 0.2rem;
+   box-shadow:0 0 0 0 ;
+}
+
+.task_list_content_div_left {
+  width: 3.8rem;
+  height: 2.12rem;
+ 
+}
+.time_box {
+  height: 0.46rem;
+  width: 2.2rem;
+  background-color: #ff9589;
+  border-radius: 0.2rem;
+  font-size: 0.24rem;
+  color: #fff;
+  text-align: center;
+  line-height: 0.46rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+}
+.time_box > p {
+  margin-left: 0.16rem;
+  margin-right: 0.16rem;
+}
+.task_title {
+  font-size: 0.4rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: bold;
+  color: rgba(239, 112, 98, 1);
+  margin-top: 0.22rem;
+  text-indent: 0.1rem;
+  letter-spacing: -0.02rem;
+}
+.task_state {
+  font-size: 0.3rem;
+  text-indent: 0.1rem;
+  font-weight: 400;
+  color: rgba(130, 130, 130, 1);
+  font-family: PingFangSC-Medium, PingFang SC;
+   letter-spacing: -0.02rem;
+}
+
+.task_list_content_div_right {
+  width: 1.8rem;
+  height: 2.12rem;
+  display: flex;
+  position: relative; 
+}
+
+.btn {
+  width: 1.8rem;
+  height: 0.8rem;
+  border-radius: 0.4rem;
+  font-size: 0.28rem;
+  color: #fff;
+  text-align: center;
+  line-height: 0.8rem;
+  font-weight:500;
+  font-family: PingFangSC-Medium, PingFang SC;
+  margin-top: 0.8rem;
+}
+
+.btn_background_overdue{
+   background: rgba(168, 168, 168, 1);
+}
+
+.btn_background_finish{
+  background:#FF5935;
+  z-index: 999;
+}
+.finish_img{
+  width: 1.5rem;
+  height: 1.4rem;
+  position: absolute;
+  right: -0.1rem;
+  top: -0.4rem;
+}
+.btn_background_begin{
+   background:rgba(255,181,176,1);
+}
+.btn_background_finish_two{
+    background:#7596FF;
+    position: relative;
+}
+
+  .mark{
+    width: 0.32rem;
+    height: 0.32rem;
+    font-size: 0.2rem;
+    text-align: center;
+    line-height: 0.32rem;
+    border-radius:0.16rem;
+     background:rgba(231,0,64,1);
+    position: absolute;
+    right: 0;
+    top: -0.1rem;
+  }
+
+ 

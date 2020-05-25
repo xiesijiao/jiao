@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>店长信息修改</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./js/media_750.js"></script>
+    <link rel="stylesheet" href="./css/regist.css">
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <!-- 页面导航 -->
+        <header class="header_div">
+            <div class="header_div_content">
+                <img src="./img/return.png" alt="">
+            </div>
+        </header>
+        <!-- 页面内容 -->
+        <div class="regist_box">
+            <p class="regist_box_p">店长资料修改</p>
+            <div class="regist_content">
+                <form action="" @submit.prevent="submit">
+                    <!-- 姓名 -->
+                    <div class="form_div">
+                        <div class="form_div_left">
+                            <img src="./img/new_name.png" alt="" class="name_img">
+                        </div>
+                        <div class="form_div_right">
+                            <p class="form_div_right_p">姓名</p>
+                            <input type="text" name="name" @blur="getName" v-model.trim="user.name"
+                                class="form_div_right_inp">
+                            <span>{{mesName}}</span>
+                        </div>
+                    </div>
+                    <!-- 手机号 -->
+                    <div class="form_div">
+                        <div class="form_div_left">
+                            <img src="./img/1234562x.png" alt="" class="name_img">
+                        </div>
+                        <div class="form_div_right">
+                            <p class="form_div_right_p">手机</p>
+                            <input type="text" name="phone" maxlength="11" v-model.trim="user.phone"
+                                class="form_div_right_inp form_div_right_inp_style" disabled>
+                        </div>
+                    </div>
+                    <!-- 身份 -->
+                    <div class="form_div">
+                        <div class="form_div_left">
+                            <img src="./img/status.png" alt="" class="name_img">
+                        </div>
+                        <div class="form_div_right">
+                            <p class="form_div_right_p">身份</p>
+                            <input type="text" name="post" maxlength="11" v-model.trim="user.post"
+                                class="form_div_right_inp form_div_right_inp_style" disabled>
+                        </div>
+                    </div>
+                    <!-- 所属分公司 -->
+                    <div class="form_div">
+                        <div class="form_div_left">
+                            <img src="./img/suohsufengongsiicon@2x.png" alt="" class="name_img">
+                        </div>
+                        <div class="form_div_right  form_div_right_two">
+                            <p class="form_div_right_p">所属分公司</p>
+                            <select class="form_div_right_se" v-model.trim="user.company" @blur="getCompany">
+                                <option value="成都">成都</option>
+                                <option value="绵阳">绵阳</option>
+                                <option value="内江">内江</option>
+                            </select>
+                            <img src="./img/trans.png" alt="" class="trans">
+                        </div>
+                    </div>
+                    <!-- 所属渠道 -->
+                    <div class="form_div">
+                        <div class="form_div_left">
+                            <img src="./img/companyicon@2x.png" alt="" class="name_img">
+                        </div>
+                        <div class="form_div_right">
+                            <p class="form_div_right_p">所属渠道</p>
+                            <input type="text" v-model.trim="user.agent" maxlength="9" @blur="getAgent"
+                                class="form_div_right_inp">
+                            <span>{{mesTeam}}</span>
+                        </div>
+                    </div>
+                    <!-- 所属渠道ID -->
+                    <div class="form_div">
+                        <div class="form_div_left">
+                            <img src="./img/id2xicon.png" alt="" class="name_img">
+                        </div>
+                        <div class="form_div_right">
+                            <p class="form_div_right_p">所属渠道ID</p>
+                            <input type="text" v-model.trim="user.id" maxlength="9" @blur="getId"  class="form_div_right_inp">
+                            <span>{{mesID}}</span>
+                        </div>
+                    </div>
+                    <!-- 所属代理商id -->
+                    <div class="form_div">
+                        <div class="form_div_left">
+                            <img src="./img/commodity_new.png" alt="" class="name_img">
+                        </div>
+                        <div class="form_div_right">
+                            <p class="form_div_right_p">所属代理商id</p>
+                            <input type="text" v-model.trim="user.deputy" maxlength="9" @blur="getDeputy" class="form_div_right_inp">
+                            <span>{{mesAgent}}</span>
+                        </div>
+                    </div>
+                    <div class="submit_btn" @click.prevent="submit">确认修改</div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                user: {
+                    name: "李李李",
+                    phone: "18799999999",
+                    post: "店长",
+                    company: "成都",
+                    agent: "金牛区二公司",
+                    id:"ABss88889",
+                    deputy:"ABss88889"
+
+                },
+                mesName: "",
+                mesTeam:"",
+                mesID:"",
+                mesAgent:""
+            },
+            methods: {
+                getName: function () {
+                    let reg = /[\u4e00-\u9fa5]/g;
+                    if (reg.test(this.user.name) && !this.user.name == "") {
+                        this.mesName = ""
+                        return true
+                    } else {
+                        this.mesName = "*输入有误"
+                        return false
+                    }
+                },
+                getCompany: function () {
+                    if (!this.user.company == "") {
+                        return true
+                    } else {
+                        return false
+                    }
+                },
+                getAgent: function () {
+                    let reg = /[\u4e00-\u9fa5]/g;
+                    if (reg.test(this.user.agent) && !this.user.name == "") {
+                        this.mesTeam = ""
+                        return true
+                    } else {
+
+                        this.mesTeam = "*输入有误"
+                        return false
+                    }
+                },
+                getId: function () {
+                    let reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{9}$/;
+                    if (reg.test(this.user.id) && !this.user.id == "") {
+                        this.mesId = ""
+                        return true
+                    }
+                    else {
+                        this.mesId = "*输入有误"
+                        return false
+                    }
+                },
+                getDeputy: function () {
+                    let reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{9}$/;
+                    if (reg.test(this.user.deputy) && !this.user.deputy == "") {
+                        this.mesAgent = ""
+                        return true
+                    }
+                    else {
+                        this.mesAgent = "*输入有误"
+                        return false
+                    }
+                },
+
+                submit: function () {
+                    if (this.getName() && this.getAgent() && this.getId() && this.getDeputy) {
+                        console.log(this.user)
+                    }
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>

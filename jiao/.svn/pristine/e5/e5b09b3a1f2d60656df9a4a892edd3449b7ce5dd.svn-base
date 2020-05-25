@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>新聚合页</title>
+    <script src="./js/public_js/vue.js"></script>
+    <script src="./js/public_js/axios.js"></script>
+    <script src="./js/media_750.js"></script>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/store.css?v=1">
+</head>
+
+<body>
+    <div id="app">
+        <div class="shop_top">
+            <!-- banner -->
+            <div class="shop_header">
+                <img src="./images/shop/bannar.png" alt="">
+            </div>
+            <!-- 爆品区+专题区 -->
+            <div class="shop_main_product">
+                <!-- 倒计时 -->
+                <div class="shop_main_product_one">
+                    <div class="count_down_wraper">
+                        <h1 class="title_font f">福利天天拿</h1>
+                        <div class="r count_down  font" >
+                            <p class="count_down_m ">距开抢</p>
+                            <div class="count_down_item r">00</div>
+                            <p class="r count_down_item_p">:</p>
+                            <div class="count_down_item r">28</div>
+                            <p class="r count_down_item_p">:</p>
+                            <div class="count_down_item r ">06</div>
+                        </div>
+                    </div>
+                    <!-- 爆品专区 -->
+                    <div class="shop_main_product_one_content font">
+                            <h1>蒙牛特仑苏 全脂早餐奶 250mlX12盒</h1>
+                            <!-- 标签部分 -->
+                            <div class="commodity_title commodity_title_else">
+                                <div class="commodity_title_one f">
+                                    <p>100% 生牛乳</p>
+                                </div>
+                                <div class="commodity_title_one f">
+                                    <p>120mg乳钙</p>
+                                </div>
+                                <div class="commodity_title_one f">
+                                    <p>3.6g蛋白质/100ml</p>
+                                </div>
+                            </div>
+                            <!-- 展示区域 -->
+                            <div class="shop_main_product_display">
+                                <div class="shop_main_product_display_left f">
+                                    <img src="./images/shop/milk.jpg" alt="">
+                                </div>
+                                <div class="shop_main_product_display_right r font">
+                                    <div class="shop_main_product_price">
+                                        <div class="shop_main_product_price_now">
+                                            <p class="shop_main_product_price_now_p f">
+                                                <span class="shop_main_product_price_now_span">￥</span>29<span  class="shop_main_product_price_now_span">.9</span>
+                                                <span class="shop_main_product_price_base">￥59.9</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!-- 券 -->
+                                    <div class="shop_main_product_ticket" >
+                                            <div class="shop_main_product_ticket_left f">
+                                                <p>200元</p>
+                                                <p>天翼奥莱专享券</p>
+                                            </div>
+                                            <div class="shop_main_product_ticket_right r">
+                                                <p>马上抢</p>
+                                            </div>
+                                    </div>
+                                    <!-- 进度条 -->
+                                    <div class="progress_wrapper_box  font" >
+                                        <div class="progress_wrapper f">
+                                            <p>{{theme.ticket_rate}}%</p>
+                                            <div class="progress_content" :style="{width:(theme.ticket_rate<10?10:theme.ticket_rate)+'%'}">
+                                            </div>
+                                        </div>
+                                        <p class="progress_wrapper_box_p r">仅剩{{theme.ticket_valid}}件</p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>  
+                </div>
+                <!-- 专题区 -->
+                <div class="shop_main_product_one_prefecture">
+                    <h1 class="title_font_else f">精选福利</h1>
+                   <ul class="slide_box">
+                       <li class="slide_item">
+                           <img src="./images/shop/pic_one.png" alt="">
+                       </li>
+                       <li class="slide_item">
+                           <img src="./images/shop/pic_two.png" alt="">
+                       </li>
+                        <li class="slide_item">
+                        <img src="./images/shop/pic_two.png" alt="">
+                    </li>
+                   </ul>
+                </div>
+            </div>
+        </div>
+        <div class="shop_mid d">
+            <h1 class="title_font_two f">好货天天抢</h1>
+            <ul class="shop_mid_tab font">
+                <li @click.prevent="tab(1)" :class="{shop_mid_item:(cureItem==1)}">今日必抢</li>
+                <li @click.prevent="tab(2)" :class="{shop_mid_item:(cureItem==2)}">食品粮油</li>
+                <li @click.prevent="tab(3)" :class="{shop_mid_item:(cureItem==3)}">居家百货</li>
+            </ul>
+            <ul class="shop_mid_tab_box">
+                <li >
+                    <div class="shop_mid_tab_box_item">
+                        <div class="shop_mid_tab_box_item_left f">
+                            <img src="./images/shop/milk.jpg" alt="">
+                            <div class="title_img">
+                                <p>今日特卖</p>
+                            </div>
+                        </div>
+                        <div class="shop_mid_tab_box_item_right r">
+                            <div class="aggregation_display_content_state_one">
+                                <p>老城南  麻辣自热小火锅420g</p>
+                            </div>
+                            <div class="commodity_title">
+                                <div class="commodity_title_one_r f">
+                                    <p>买一赠一</p>
+                                </div>
+                                <div class="commodity_title_one f">
+                                    <p>牛油</p>
+                                </div>
+                            </div>
+                            <div class="active_content_box_ticket">
+                                <div class="coupon f">
+                                    <img src="./images/aggregation_page/rx_yhq_l2.png" alt="" class="ticket_img1">
+                            
+                                    <div class="ticket_div_img1 f">
+                                        <p class="coupon2">淘宝优惠券 3元</p>
+                                    </div>
+                                    <img src="./images/aggregation_page/rx_yhq_r2.png" alt="" class="ticket_img1">
+                                </div>
+                                <div class="rob_div_coupon f">
+                                    <p>已抢59张</p>
+                                </div>
+                            </div>
+                            <div class="aggregation_display_content_state_two">
+                                <div class="price_btn_wrapper ">
+                                    <div class="price_btn_one f">
+                                        <span class="price_btn_one_span1">￥</span>
+                                        <p class="price_btn_one_p1">29.9</p>
+                                    </div>
+                                    <div class="price_btn_two1 f">
+                                        <p>￥59</p>
+                                    </div>
+                                </div>
+                                <button class="r"> 马上抢</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="shop_mid d">
+            <h1 class="title_font_two f">母婴限量好货 惊喜直降</h1>
+            <ul class="shop_mid_tab_box">
+                <li>
+                    <div class="shop_mid_tab_box_item">
+                        <div class="shop_mid_tab_box_item_left f">
+                            <img src="./images/shop/milk.jpg" alt="">
+                        </div>
+                        <div class="shop_mid_tab_box_item_right r">
+                            <div class="aggregation_display_content_state_one">
+                                <p>老城南 麻辣自热小火锅420g</p>
+                            </div>
+                            <div class="commodity_title">
+                                <div class="commodity_title_one_r f">
+                                    <p>买一赠一</p>
+                                </div>
+                                <div class="commodity_title_one f">
+                                    <p>牛油</p>
+                                </div>
+                            </div>
+                            <div class="active_content_box_ticket">
+                                <div class="coupon f">
+                                    <img src="./images/aggregation_page/rx_yhq_l2.png" alt="" class="ticket_img1">
+            
+                                    <div class="ticket_div_img1 f">
+                                        <p class="coupon2">淘宝优惠券 3元</p>
+                                    </div>
+                                    <img src="./images/aggregation_page/rx_yhq_r2.png" alt="" class="ticket_img1">
+                                </div>
+                                <div class="rob_div_coupon f">
+                                    <p>已抢59张</p>
+                                </div>
+                            </div>
+                            <div class="aggregation_display_content_state_two">
+                                <div class="price_btn_wrapper ">
+                                    <div class="price_btn_one f">
+                                        <span class="price_btn_one_span1">￥</span>
+                                        <p class="price_btn_one_p1">29.9</p>
+                                    </div>
+                                    <div class="price_btn_two1 f">
+                                        <p>￥59</p>
+                                    </div>
+                                </div>
+                                <button class="r"> 马上抢</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="shop_mid d">
+            <h1 class="title_font_two f">猜你喜欢</h1>
+            <ul class="shop_mid_tab_box">
+                <li>
+                    <div class="shop_mid_tab_box_item">
+                        <div class="shop_mid_tab_box_item_left f">
+                            <img src="./images/shop/milk.jpg" alt="">
+                        </div>
+                        <div class="shop_mid_tab_box_item_right r">
+                            <div class="aggregation_display_content_state_one">
+                                <p>老城南 麻辣自热小火锅420g</p>
+                            </div>
+                            <div class="commodity_title">
+                                <div class="commodity_title_one_r f">
+                                    <p>买一赠一</p>
+                                </div>
+                                <div class="commodity_title_one f">
+                                    <p>牛油</p>
+                                </div>
+                            </div>
+                            <div class="active_content_box_ticket">
+                                <div class="coupon f">
+                                    <img src="./images/aggregation_page/rx_yhq_l2.png" alt="" class="ticket_img1">
+        
+                                    <div class="ticket_div_img1 f">
+                                        <p class="coupon2">淘宝优惠券 3元</p>
+                                    </div>
+                                    <img src="./images/aggregation_page/rx_yhq_r2.png" alt="" class="ticket_img1">
+                                </div>
+                                <div class="rob_div_coupon f">
+                                    <p>已抢59张</p>
+                                </div>
+                            </div>
+                            <div class="aggregation_display_content_state_two">
+                                <div class="price_btn_wrapper ">
+                                    <div class="price_btn_one f">
+                                        <span class="price_btn_one_span1">￥</span>
+                                        <p class="price_btn_one_p1">29.9</p>
+                                    </div>
+                                    <div class="price_btn_two1 f">
+                                        <p>￥59</p>
+                                    </div>
+                                </div>
+                                <button class="r"> 马上抢</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+    var w= new Vue({
+            el: "#app",
+            data: {
+                theme:{
+                    ticket_rate:10,
+                    ticket_valid:997
+                },
+                cureItem:1
+            },
+            mounted() {
+
+            },
+            methods: {
+                tab:function(item){
+                    w.cureItem=item
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>

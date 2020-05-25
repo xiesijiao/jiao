@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title>订单页面</title>
+    <link rel="stylesheet" href="css/orderlist.css?v=2">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/media_750.js"></script>
+</head>
+
+<body>
+<div id="app">
+    <div style="position: fixed;right: 10px;top: 10px;z-index:9999;font-size:0.14rem">{{heights}}</div>
+    <div class="order_header">
+        <div>
+            <ul class="order_header_content">
+                <li><a @click="ChangeItem(1)" :class="{active:(cureItem==1)}">淘宝订单</a></li>
+                <li><a @click="ChangeItem(2)" :class="{active:(cureItem==2)}">云商订单</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 淘宝 -->
+    <div class="order_container">
+        <ul>
+            <li class="order_container_box" v-for="(item,index) in dataList" :key=item.keyid>
+                <div class="order_container_box_center">
+                    <div class="order_container_box_center_top">
+                        <img :src="icons" alt="" class="order_container_box_center_top_img">
+                        <span>{{item.orderid}}</span>
+                        <span>{{item.pay_time}}</span>
+                    </div>
+                    <div class="order_container_box_center_bottom">
+                        <img :src="item.img" alt="" class="order_container_box_center_bottom_img">
+
+                        <div class="order_container_box_center_bottom_left">
+                            <div class="order_container_box_center_bottom_left_p">
+                                <p class="lip ">{{item.gtitle}}</p>
+                            </div>
+                            <span>¥{{item.pay_price}}</span>
+
+                            <div class="normal_img">
+                                <img v-if="item.status==1" src="./images/order/1.png" alt="">
+                                <img v-if="item.status==0" src="./images/order/2.png" alt="">
+                                <p>{{item.status_txt}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <!-- 下拉加载 -->
+            <li>
+                <div class="pullDown">
+                    <span ref="pullUpEl" class="pullUpLabel">---上拉加载更多---</span>
+                </div>
+            </li>
+        </ul>
+        <!-- 无订单时候展示 -->
+        <div v-if="isNull">
+            <div class="order_container_one"></div>
+            <p class="order_container_one_not">---暂无订单信息---</p>
+        </div>
+    </div>
+</div>
+<script src="./js/comm.js?v=11"></script>
+<script>
+    var w = new Vue({
+        el: "#app",
+        data: {
+            dataList: [], heights: 0, cureItem: 1, page: 1, isLoad: false, isNull: false,
+            API_TB: 'getPidOrderTbListApi', API_YS: 'getPidOrderYsListApi', msg: '', icons: './images/order/icon_1.png'
+        },
+        mounted: function () {
+            axios.get("/bstuan/api/channel/getPidOrderTbListApi", {params: {p: 1}}).then(function (res) {
+                if (res.data.data == 0) {
+                    w.isNull = true;
+                    w.$refs.pullUpEl.innerHTML = '-----没任何订单-----';
+                } else {
+                    w.isNull = false;
+                    w.dataList = res.data.info;
+                }
+                w.ScrollLoad();
+            });
+        },
+        methods: {
+            ChangeItem: function (itemid) {
+                w.cureItem = itemid;
+                w.page = 1;
+                w.icons = "./images/order/icon_" + itemid + ".png";
+                axios.get("/bstuan/api/channel/" + (w.cureItem == 1 ? w.API_TB : w.API_YS), {params: {p: 1}}).then(function (res) {
+                    w.page = w.page + 1;
+                    if (res.data.data == 0) {
+                        w.isNull = true;
+                        w.$refs.pullUpEl.innerHTML = '-----没任何订单-----';
+                    } else {
+                        w.isNull = false;
+                        w.dataList = res.data.info;
+                        w.$refs.pullUpEl.innerHTML = '-----上拉加载更多-----';
+                        w.isLoad = false;
+                    }
+                }).catch(function (err) {
+                });
+            },
+            ScrollLoad: function () {
+                w.heights = getHeight();
+                if (w.heights < 20 && !w.isLoad) {
+                    w.isLoad = true;
+                    w.$refs.pullUpEl.innerHTML = '-----加载中-----';
+                    axios.get("/bstuan/api/channel/" + (w.cureItem == 1 ? w.API_TB : w.API_YS), {params: {p: w.page}}).then(function (res) {
+                        w.page = w.page + 1;
+                        var datas = res.data.info;
+                        if (res.data.data == 0) {
+                            w.$refs.pullUpEl.innerHTML = '-----已经没有更多了-----';
+                        } else {
+                            w.dataList.push.apply(w.dataList, datas);
+                            w.$refs.pullUpEl.innerHTML = '-----上拉加载更多-----';
+                            w.isLoad = false;
+                        }
+                    }).catch(function (err) {
+                    });
+                }
+                setTimeout("w.ScrollLoad()", 200);
+            }
+        }
+    });
+</script>
+</body>
+</html>

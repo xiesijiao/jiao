@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>聚合页</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/media_750.js"></script>
+    <link rel="stylesheet" href="./css/com.css?v=6">
+    <link rel="stylesheet" href="./css/toast.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- 爆品推荐 -->
+        <!-- aggregation_page是主题背景图在CSS里面 -->
+        <div class="aggregation_page">
+            <div class="aggregation_page_content">
+                <!-- 倒计时 -->
+                <div >
+                    <img src="./images/aggregation_page/P1_tittle.png" alt="" class="aggregation_page_content_img f">
+                    <div class="r count_down" v-if="!begin">
+                        <p class="count_down_m">距开抢</p>
+                        <div class="count_down_item r">{{hr}}</div>
+                        <p class="r count_down_m">:</p>
+                        <div class="count_down_item r">{{min}}</div>
+                        <p class="r count_down_m">:</p>
+                        <div class="count_down_item r count_down_m">{{sec}}</div>
+                    </div>
+                </div>
+                <div class="aggregation_page_content_box" @click="robClick(theme.gid)">
+                    <div class="aggregation_page_content_box_one">
+                        <img :src=theme.img alt="" class="aggregation_page_content_box_img1">
+                        <img src="./images/aggregation_page/label.gif" alt="" class="aggregation_page_content_box_img2">
+                    </div>
+                    <div class="aggregation_page_content_box_two">
+                        <h1>{{theme.gtitle}}</h1>
+                        <!-- 标签部分 -->
+                        <div class="commodity_title">
+                            <div class="commodity_title_one m f" v-for="(item,index) in theme.tags" :key=index>
+                                <p>{{item.title}}</p>
+                            </div>
+                        </div>
+                        <!-- 券 -->
+                        <div class="active_content_box_ticket">
+                            <div class="coupon">
+                                <img src="./images/aggregation_page/bk_yhq_l.png" alt="" class="ticket_img">
+
+                                <div class="ticket_div_img">
+                                    <p class="coupon1">{{theme.ticket1}}</p>
+                                </div>
+                                <img src="./images/aggregation_page/bk_yhq_r.png" alt="" class="ticket_img">
+                            </div>
+                        </div>
+                        <div class="price_btn">
+                            <div class="price_btn_wrapper f">
+                                <div class="price_btn_one f">
+                                    <span class="price_btn_one_span">¥</span>
+
+                                    <p class="price_btn_one_p">{{theme.price_now_1}}</p>
+                                    <span class="price_btn_one_span">.{{theme.price_now_2}}</span>
+                                </div>
+                                <div class="price_btn_two f">
+                                    <p>¥{{theme.price_base}}</p>
+                                </div>
+                                <div class="progress_wrapper_box f" v-if="begin">
+                                    <div class="progress_wrapper">
+                                        <p>{{theme.ticket_rate}}%</p>
+                                        <div class="progress_content"
+                                            :style="{width:(theme.ticket_rate<10?10:theme.ticket_rate)+'%'}">
+                                        </div>
+                                    </div>
+                                    <p class="progress_wrapper_box_p">仅剩{{theme.ticket_valid}}件</p>
+                                </div>
+                            </div>
+                            <div class="shopping_btn r" v-if="begin">
+                                <img src="./images/aggregation_page/rob.png" alt="" class="shopping_btn_img">
+                            </div>
+                            <div class="shopping_btn_else r" v-if="!begin">
+                                <img src="./images/aggregation_page/rob.png" alt="" class="shopping_btn_img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 商品陈列 -->
+        <div class="aggregation_display">
+            <!-- 倒计时 -->
+            <div class="count_down_wrapper">
+                <img src="./images/aggregation_page/p2_tittle.png" alt="" class="aggregation_display_img">
+                <div class="r count_down1"  v-if="!begin">
+                    <p class="count_down_m">距开抢</p>
+                    <div class="count_down_item1 r">{{hr}}</div>
+                    <p class="r count_down_m">:</p>
+                    <div class="count_down_item1 r">{{min}}</div>
+                    <p class="r count_down_m">:</p>
+                    <div class="count_down_item1 r count_down_m">{{sec}}</div>
+                </div>
+            </div>
+            <ul class="aggregation_display_content">
+                <li v-for="(data,index) in commodityList" :key=index @click="readyClick(data.gid,data.down)">
+                    <div class="aggregation_display_content_box">
+                        <div class="aggregation_display_content_img">
+                            <img :src=data.img alt="">
+                        </div>
+                        <div class="aggregation_display_content_state">
+                            <div class="aggregation_display_content_state_one">
+                                <p>{{data.gtitle}}</p>
+                            </div>
+                            <div class="commodity_title">
+                                <div class="commodity_title_one f m" v-for="(item,index) in data.tags"
+                                    :class="{commodity_title_one_r:item.hot}">
+                                    <p>{{item.title}}</p>
+                                </div>
+                            </div>
+                            <div class="active_content_box_ticket">
+                                <div class="coupon f">
+                                    <img src="./images/aggregation_page/rx_yhq_l2.png" alt="" class="ticket_img1">
+
+                                    <div class="ticket_div_img1 f">
+                                        <p class="coupon2">{{data.ticket1}}</p>
+                                    </div>
+                                    <img src="./images/aggregation_page/rx_yhq_r2.png" alt="" class="ticket_img1">
+                                </div>
+                                <div class="rob_div_coupon f">
+                                    <p>已抢{{data.ticket_valid}}张</p>
+                                </div>
+                            </div>
+                            <div class="aggregation_display_content_state_two">
+                                <div class="price_btn_wrapper f">
+                                    <div class="price_btn_one f">
+                                        <span class="price_btn_one_span1">¥</span>
+
+                                        <p class="price_btn_one_p1">{{data.price_now}}</p>
+                                    </div>
+                                    <div class="price_btn_two1 f">
+                                        <p>¥{{data.price_base}}</p>
+                                    </div>
+                                </div>
+                                <button class="r" v-if="!data.down"> 马上抢</button>
+                                <button class="r" style="background-color: #b1b4c6;" v-if="data.down">已售罄</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 往期专题 -->
+        <div class="review_display">
+            <img src="./images/aggregation_page/review_img.png" alt="" class="title_img">
+            <ul class="review_display_img">
+                <li v-for="(item,index) in pastThemes" :key=index>
+                    <img :src=item.img alt="" @click="pastClick(item.gid)">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/com.js/toast.js"></script>
+    <script>
+        var w = new Vue({
+            el: "#app",
+            data: {
+                theme: "", commodityList: [], pastThemes: [], isShow: false,begin:false, hr: 0, min: 0,  sec: 0,
+            },
+            mounted() {
+                axios.get("./js/aggregation.json").then(function (res) {
+                    console.log(res.data.ztlist);
+                    w.theme = res.data.hot;
+                    w.commodityList = res.data.goodslist;
+                    w.pastThemes = res.data.ztlist;
+                })
+                this.getTime()
+            }
+            ,
+            methods: {
+                // 主题抢购按钮
+                robClick: function (id) {
+                    console.log(id)
+                }
+                ,
+                // 列表抢购按钮
+                readyClick: function (id, state) {
+                    // console.log(id, state)
+                    // if (state == true) {
+                    //     Toast.init();
+                    //     Toast.show('商品已售罄，下次请早哦', 'success', 10000);
+                    //     setTimeout(function () {
+                    //         Toast.hide();
+                    //     }, 3000);
+
+                    // }
+                    window.location = './commodity_iteration.html'
+                }
+                ,
+                // 往期主题按钮
+                pastClick: function (id) {
+                    console.log(id)
+                },
+                //计时器
+                getTime: function () {
+                      // 目标日期时间戳
+                    const end = Date.parse(new Date('2020-04-23 21:00:00'))
+                    const now = Date.parse(new Date());
+                     const msec = end - now
+                    if(msec>=0){
+                        let hr = parseInt(msec / 1000 / 60 / 60 % 24);
+                        let min = parseInt(msec / 1000 / 60 % 60);
+                        let sec = parseInt(msec / 1000 % 60);
+                        this.hr = hr <9 ? '0' + hr : '00'
+                        this.min = min >9?  min : '0' + min
+                        this.sec = sec >9? sec : '0' +sec
+                        const that = this;
+                        this._interval = setTimeout(function () {
+                            that.getTime()
+                        }, 1000)
+                    }else{
+                        this.begin=true
+                    }
+                }
+            } ,
+             beforeDestroy() {
+                clearInterval(this._interval)
+            },
+        })
+            ;
+    </script>
+</body>
+
+</html>

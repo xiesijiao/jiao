@@ -1,0 +1,340 @@
+.font {
+  font-family: PingFangSC-Medium, PingFang SC;
+}
+
+/* 头部个人资料 */
+.person_homepage_header {
+  width: 100%;
+  height: 4.44rem;
+  background-image: url("../images/person_homepage/bigpic.png");
+  background-size: 100% 100%;
+  display: flex;
+}
+.person_homepage_header_content {
+  width: 6.98rem;
+  height: 1.66rem;
+  /* background-color: pink; */
+  margin: 0.44rem auto 0.28rem;
+}
+.person_homepage_header_content_left {
+  width: 1rem;
+  height: 1.66rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+}
+.person_homepage_header_content_left > img {
+  width: 0.9rem;
+  height: 0.9rem;
+  margin: 0 auto;
+}
+.person_homepage_header_content_left > p {
+  font-size: 0.26rem;
+  margin-top: 0.16rem;
+}
+.person_homepage_header_content_left > span {
+  font-size: 0.2rem;
+}
+.person_homepage_header_content_right {
+  width: 5.32rem;
+  height: 1.66rem;
+  margin-left: 0.34rem;
+  display: flex;
+  flex-direction: column;
+  color: rgba(255, 255, 255, 1);
+}
+.person_homepage_header_content_right_one {
+  font-size: 0.3rem;
+  font-weight: bold;
+}
+.person_homepage_header_content_right_one > div {
+  width: 1.54rem;
+  height: 0.44rem;
+  border-radius: 0.22rem;
+  font-size: 0.24rem;
+  text-align: center;
+  line-height: 0.44rem;
+  border: 1px solid white;
+}
+.person_homepage_header_content_right_two {
+  height: 0.57rem;
+  font-size: 0.2rem;
+}
+.person_homepage_header_content_right_three {
+  height: 0.34rem;
+  margin-top: 0.16rem;
+}
+.join_day {
+  height: 0.34rem;
+  background: rgba(255, 170, 153, 1);
+  border-radius: 0.16rem;
+  font-size: 0.24rem;
+
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  line-height: 0.34rem;
+  text-align: center;
+}
+.join_day > p {
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+}
+.invitation_code {
+  width: 2.96rem;
+  height: 0.34rem;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 0.16rem;
+  font-size: 0.2rem;
+}
+.invitation_code > p {
+  color: rgba(222, 83, 95, 1);
+  /* margin-left: 0.2rem; */
+  margin-left: 0.14rem;
+  line-height: 0.34rem;
+  /* letter-spacing: 0.01rem; */
+  padding-top: 0.01rem;
+}
+.invitation_code > div {
+  width: 1.56rem;
+  height: 0.34rem;
+  background: rgba(240, 84, 97, 1);
+  border-radius: 0.16rem;
+  text-align: center;
+}
+.invitation_code > div > p {
+  padding-top: 0.01rem;
+}
+
+/* 佣金 */
+.person_homepage_content {
+  width: 6.98rem;
+  height: 6rem;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0.01rem 0.01rem 0.24rem 0rem rgba(210, 210, 210, 1);
+  border-radius: 0.2rem;
+  margin: -2.08rem auto 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.person_homepage_content_center {
+  width: 6.2rem;
+  height: 5.44rem;
+  display: flex;
+  flex-direction: column;
+}
+.personal_rating {
+  height: 0.38rem;
+}
+.personal_rating_display {
+  width: 1.2rem;
+  height: 0.38rem;
+  background-color: #e69c59;
+  border-radius: 0.1rem;
+  font-size: 0.24rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  line-height: 0.38rem;
+}
+.question_mark {
+  width: 0.4rem;
+  height: 0.38rem;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(230, 156, 89, 1);
+  border-radius: 0.19rem;
+  font-size: 0.3rem;
+  font-weight: 500;
+  color: rgba(230, 156, 89, 1);
+  line-height: 0.4rem;
+  margin-left: 0.1rem;
+}
+.question_mark > P {
+  margin-left: 0.13rem;
+  font-family: PingFang SC;
+}
+.accumulated_income {
+  height: 1rem;
+  font-size: 0.3rem;
+}
+.accumulated_income_one {
+  height: 0.3rem;
+  width: 1.42rem;
+  margin: 0 auto;
+  font-size: 0.24rem;
+  display: flex;
+  justify-content: space-between;
+  color: #d2d2d2;
+  line-height: 0.3rem;
+}
+.accumulated_income_one > img {
+  width: 0.3rem;
+  height: 0.3rem;
+}
+.accumulated_income_price {
+  font-size: 0.52rem;
+  color: #f05461;
+  text-align: center;
+  font-weight: bold;
+}
+
+.forecast_earnings {
+  height: 0.84rem;
+  margin-top: 0.3rem;
+}
+.forecast_earnings_price {
+  width: 3.08rem;
+  height: 0.84rem;
+  text-align: center;
+}
+.border_style {
+  border-right: 1px solid #e8e8e8;
+}
+.forecast_earnings_price > p:nth-of-type(1) {
+  font-size: 0.26rem;
+  color: #686868;
+  font-weight: 500;
+}
+.forecast_earnings_price > p:nth-of-type(2) {
+  font-size: 0.4rem;
+  font-weight: bold;
+  color: rgba(104, 104, 104, 1);
+}
+
+.retained_earnings {
+  height: 1.88rem;
+  margin-top: 0.36rem;
+}
+
+
+.retained_earnings_progress {
+  width: 3.6rem;
+  height: 1.87rem;
+  margin-top: 0.16rem;
+  display: flex;
+  flex-direction: column;
+
+}
+.retained_earnings_progress_one {
+  width: 3.6rem;
+  font-size: 0.24rem;
+  font-weight: 400;
+  color: rgba(104, 104, 104, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.retained_earnings_progress_box {
+  font-size: 0.26rem;
+  color: rgba(249, 142, 151, 1);
+  line-height: 0.26rem;
+}
+.progress_wrapper {
+  width: 3.08rem;
+  height: 0.2rem;
+  background: rgba(240, 240, 240, 1);
+  border-radius: 0.1rem;
+  position: relative;
+  margin-right: 0.04rem;
+}
+.progress_content {
+  background-color: #f98e97;
+  height: 0.2rem;
+  border-bottom-left-radius: 0.1rem;
+  border-top-left-radius: 0.1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.border_one {
+  border-radius: 0.1rem;
+}
+.retained_earnings_progress_box > p {
+  margin-top: -0.02rem;
+}
+.coordinate,.coordinate_else{
+  font-size: 0.2rem;
+   color:#FFD1D1;
+   position: relative;
+}
+.coordinate>p:nth-of-type(1){
+  margin-left: 0.2rem;
+}
+.coordinate>div{
+  height: 0.4rem;
+  border: 0.1px solid #FFD1D1;
+  margin-left: 0.1rem;
+  margin-top: -0.23rem;
+  position: absolute;
+  left: 0.6rem;
+}
+.coordinate>p:nth-of-type(2){
+  margin-right: 0.58rem;
+}
+.m_top{
+  margin-top: 0.2rem;
+}
+.coordinate_else>p:nth-of-type(1){
+  margin-left: 1rem;
+}
+.coordinate_else>div{
+   height: 0.4rem;
+  border: 0.1px solid #FFD1D1;
+  margin-top: -0.23rem;
+  position: absolute;
+  left:1.54rem
+}
+.coordinate_else>p:nth-of-type(2){
+  margin-right: 0.58rem;
+}
+
+.retained_earnings_price {
+  width: 1.74rem;
+  height: 1.88rem;
+  background-image: url("../images/person_homepage/retained_earnings.png");
+  background-size: 100% 100%;
+}
+.retained_earnings_price>p{
+  font-size: 0.36rem;
+  font-weight:bold;
+color:rgba(255,255,255,1);
+text-align: center;
+margin-top: 0.83rem;
+}
+.retained_earnings_price_mark>p{
+  font-size: 0.24rem;
+  color:rgba(255,255,255,1);
+  margin-left: 0.2rem;
+}
+.question_mark_one{
+  width:0.4rem;
+height:0.38rem;
+background:rgba(255,255,255,1);
+border-radius:19px;
+margin-left: 0.1rem;
+
+}
+.question_mark_one>P{
+  font-size: 0.32rem;
+  color: #F05260;
+ margin-left: 0.13rem;
+ line-height: 0.38rem;
+}
+.rise_in_rank{
+  margin-top: 0.4rem;
+  text-align: center;
+   font-size: 0.24rem;
+   color: #686868;
+}
+.rise_in_rank>p>span{
+ color: #EC5D69;
+}
+
+.person_homepage_icon {
+  width: 6.04rem;
+  height: 3rem;
+  margin: 0 auto;
+  background-color: pink;
+}

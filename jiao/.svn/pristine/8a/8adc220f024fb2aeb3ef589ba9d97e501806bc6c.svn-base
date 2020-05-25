@@ -1,0 +1,260 @@
+body {
+  background-color: #f2e2df;
+}
+.font {
+  font-family: PingFangSC-Medium, PingFang SC;
+}
+/* 区域title */
+.title_font {
+  font-size: 0.36rem;
+  font-family: YOUSHEhaoshenti;
+  font-weight: 400;
+  color: rgba(218, 153, 159, 1);
+  line-height: 0.6rem;
+}
+/* 爆品区+专题区 */
+.shop_top {
+  height: 10.76rem;
+  position: relative;
+}
+.shop_header,
+.shop_header > img {
+  width: 100%;
+  height: 3.2rem;
+}
+.shop_main_product {
+  width: 100%;
+  height: 7.56rem;
+  background-color: #fff;
+  border-radius: 0.1rem;
+  position: absolute;
+  top: 3.12rem;
+}
+/* 爆品区 */
+.shop_main_product_one {
+  height: 4.24rem;
+  width: 6.5rem;
+  margin: 0.3rem auto;
+}
+/* 倒计时 */
+.count_down_wraper {
+  width: 6.5rem;
+  height: 0.5rem;
+  font-size: 0.3rem;
+  align-items: center;
+  margin-right: 0.24rem;
+  color: #f51a3c;
+  font-weight: bold;
+}
+.count_down {
+  display: flex;
+  margin-top: 0.06rem;
+}
+.count_down_item {
+  width: 0.4rem;
+  height: 0.4rem;
+  font-size: 0.3rem;
+  background-color: #f51a3c;
+  text-align: center;
+  color: #fff;
+  margin-right: 0.06rem;
+  line-height: 0.4rem;
+  border-radius: 0.05rem;
+}
+.count_down_m {
+  color: rgba(127, 41, 55, 1);
+  font-weight: bold;
+  margin-right: 0.1rem;
+}
+.count_down_item_p {
+  color: #f51a3c;
+  margin-right: 0.06rem;
+}
+.shop_main_product_one_content {
+  width: 6.5rem;
+  height: 3.68rem;
+  background: rgba(248, 240, 238, 1);
+  margin-top: 0.1rem;
+  border-radius: 0.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.shop_main_product_one_content > h1 {
+  font-size: 0.28rem;
+  font-weight: bold;
+  color: rgba(36, 36, 36, 1);
+  margin: 0.2rem 0.2rem 0.05rem;
+}
+
+/* 标签部分 */
+.commodity_title {
+  height: 0.38rem;
+  margin-left: 0.2rem;
+  margin-bottom: 0.1rem;
+}
+.commodity_title_one {
+  border: 1px solid rgba(228, 211, 208, 1);
+  height: 0.34rem;
+  width: fit-content;
+  color: rgba(196, 177, 172, 1);
+  font-size: 0.24rem;
+  border-radius: 0.4rem;
+  line-height: 0.32rem;
+  margin-right: 0.1rem;
+}
+.commodity_title_one > p {
+  margin-left: 0.14rem;
+  margin-right: 0.14rem;
+  padding: 0.02rem 0;
+}
+.shop_main_product_display {
+  height: 2.36rem;
+  width: 6.06rem;
+  margin: 0 auto 0.2rem;
+}
+.shop_main_product_display_left,
+.shop_main_product_display_left > img {
+  width: 2.36rem;
+  height: 2.36rem;
+  border-radius: 0.1rem;
+}
+.shop_main_product_display_right {
+  width: 3.52rem;
+  height: 1.76rem;
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+}
+.shop_main_product_price {
+  height: 0.4rem;
+}
+
+.shop_main_product_price_now_span {
+  font-size: 0.22rem;
+}
+.shop_main_product_price_now_p {
+  font-size: 0.52rem;
+  color: #f51a3c;
+  margin-top: -0.08rem;
+    font-weight: bold;
+}
+.shop_main_product_price_base {
+  font-size: 0.24rem;
+  font-weight: 500;
+  color: rgba(145, 145, 145, 1);
+  text-decoration: line-through;
+  margin-top: 0.1rem;
+  margin-left: 0.24rem;
+}
+.shop_main_product_ticket{
+  width: 3.52rem;
+  height: 0.66rem;
+  background-image: url("../images/shop/rob_begin.png");
+  background-size: 100% 100%;
+  margin-top: 0.2rem;
+}
+.shop_main_product_ticket_left{
+  width: 1.8rem;
+  height: 0.44rem;
+  margin-left: 0.24rem;
+  margin-top: 0.1rem;
+}
+.shop_main_product_ticket_left{
+  font-size: 0.2rem;
+  text-align: center;
+  color: #F51A3C;
+  font-weight: bold;
+}
+
+
+.shop_main_product_ticket_left>p:nth-of-type(1){
+  margin-top: -0.08rem;
+}
+.shop_main_product_ticket_left>p:nth-of-type(2){
+  margin-top: -0.06rem;
+}
+.shop_main_product_ticket_right{
+  width: 0.76rem;
+  height: 0.26rem;
+  margin-right: 0.2rem;
+  margin-top: 0.2rem;
+  font-size: 0.24rem;
+}
+.shop_main_product_ticket_right>p{
+  margin-top: -0.08rem;
+    margin-bottom: 0.08rem;
+  color: #fff;
+  font-weight: bold;
+}
+/* 进度条 */
+.progress_wrapper_box{
+  margin-top: 0.2rem;
+}
+.progress_wrapper {
+  width: 2.26rem;
+  height: 0.23rem;
+  background-color: #fb8c9d;
+  border-radius: 0.2rem;
+  font-size: 0.2rem;
+  text-align: center;
+  line-height: 0.23rem;
+  color: white;
+  position: relative;
+  margin-top: 0.14rem;
+}
+.progress_wrapper > p {
+  position: absolute;
+  top: 0;
+  left: 0.88rem;
+  z-index: 999;
+}
+.progress_content {
+  background-color: #f5193c;
+  height: 0.23rem;
+  border-radius: 0.2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.progress_wrapper_box_p {
+  font-size: 0.24rem;
+  color: #919191;
+  text-align: center;
+  margin-top: 0.05rem;
+  font-weight: bold;
+}
+/* 专区轮播 */
+.shop_main_product_one_prefecture{
+  height: 2.44rem;
+  margin-top: 0.3rem;
+  display: flex;
+  flex-direction: column;
+}
+.title_font_else{
+   font-size: 0.36rem;
+  font-family: YOUSHEhaoshenti;
+  font-weight: 400;
+  color: rgba(218, 153, 159, 1);
+
+  margin-left: 0.5rem;
+}
+.slide_box{
+  height: 2rem;
+  display: -webkit-box;
+  overflow: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.slide_box>li:first-child{
+  margin-left: 0.3rem;
+}
+.slide_item,.slide_item>img{
+    width: 4.4rem;
+    height: 1.88rem;
+    margin-left: 0.2rem;
+    border-radius: 0.1rem;
+}
+.slide_box::-webkit-scrollbar{
+  display: none;
+}

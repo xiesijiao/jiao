@@ -1,0 +1,149 @@
+body {
+  background-color: #f8f8f8;
+}
+.font {
+  font-family: PingFangSC-Medium, PingFang SC;
+}
+.order_header {
+  width: 100%;
+  height: 0.9rem;
+  background-color: #ffffff;
+}
+.order_header_content {
+  width: 4.86rem;
+  height: 0.88rem;
+  font-size: 0.28rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.order_header_content > li {
+  line-height: 0.88rem;
+}
+.order_header_content > li > a {
+  color: #686868;
+  padding: 0.26rem 0;
+  font-weight: 500;
+  font-family: Source Han Sans CN;
+}
+.active {
+  border-bottom: 0.06rem solid #ff6673;
+}
+.order_container {
+  width: 6.92rem;
+  margin: 0.4rem auto 0.2rem;
+}
+.order_container > ul > li {
+  width: 6.9rem;
+  height: 3.62rem;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0.01rem 0.01rem 0.24rem 0rem rgba(210, 210, 210, 1);
+  border-radius: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.order_container > ul > li:not(:first-child) {
+  margin-top: 0.4rem;
+}
+.order_container > ul > li:last-child {
+  margin-bottom: 0.6rem;
+}
+.order_container_box {
+  height: 2.9rem;
+  width: 6.2rem;
+  display: flex;
+  flex-direction: column;
+}
+.order_name {
+  height: 0.24rem;
+  font-size: 0.24rem;
+  line-height: 0.24rem;
+  color: #888888;
+}
+.order_name > img {
+  width: 0.24rem;
+  height: 0.24rem;
+  margin-right: 0.12rem;
+}
+.order_name > p:nth-of-type(1) {
+  margin-right: 0.34rem;
+}
+.order_name > p:nth-of-type(3) {
+  color: #ff6673;
+}
+.order_display {
+  height: 1.6rem;
+  margin-top: 0.38rem;
+}
+.order_img > img {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 0.1rem;
+  border: 1px solid #e8e8e8;
+}
+.order_information {
+  width: 4.26rem;
+  height: 1.6rem;
+}
+.order_information_p {
+  font-size: 0.26rem;
+  font-weight: 500;
+  color: rgba(104, 104, 104, 1);
+}
+.lip {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.prise_display {
+  height: 0.4rem;
+  margin-top: 0.2rem;
+}
+.prise_display > p {
+  font-size: 0.36rem;
+  font-weight: 500;
+  color: rgba(245, 26, 60, 1);
+  line-height: 0.4rem;
+}
+.brokerage {
+  height: 0.4rem;
+  background-color: #f51a3c;
+  border-radius: 0.1rem;
+  color: #ffffff;
+  font-size: 0.24rem;
+  line-height: 0.4rem;
+  text-align: center;
+}
+.brokerage > p {
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+}
+.oder_count_number {
+  height: 0.4rem;
+  margin-top: 0.3rem;
+font-size:0.24rem;
+font-weight:400;
+color:rgba(136,136,136,1);
+line-height: 0.42rem;
+}
+.oder_count_time{
+   margin-top: 0.06rem;
+   font-size:0.24rem;
+font-weight:400;
+color:rgba(136,136,136,1);
+line-height: 0.42rem;
+height: 0.4rem;
+}
+.copy_div{
+  width:0.84rem;
+height:0.4rem;
+border:1px solid rgba(104,104,104,1);
+border-radius:0.1rem;
+color: #686868;
+text-align: center;
+line-height: 0.42rem;
+}

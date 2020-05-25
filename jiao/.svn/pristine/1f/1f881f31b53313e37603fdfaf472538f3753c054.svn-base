@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title>绑定银行卡</title>
+    <link rel="stylesheet" href="./css/bind_card.css?v=1">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/media_750.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="bind_card_div"></div>
+        <p class="bind_card_div_p">--还未添加银行卡--</p>
+        <div class="bind_card_btn">
+            <div class="bind_card_btn_font" @click="addCard">
+                <img src="./images/bank_card/add.png" alt="" class="add_img">
+                <span>添加银行卡</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {},
+            methods: {
+                addCard: function () {
+
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>

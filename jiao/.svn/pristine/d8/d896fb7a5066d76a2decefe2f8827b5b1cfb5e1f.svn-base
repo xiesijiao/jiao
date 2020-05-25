@@ -1,0 +1,92 @@
+{
+  "plist": [
+    {
+      "m_phone": "18117944044",
+      "m_name": "王书生",
+      "order_count": 0,
+      "fs_count": 0,
+      "is_dz": true,
+      "grade": 1,
+      "order_month": 0,
+      "je_month": 0.0,
+      "je_count": 0.0,
+      "m_id": 124175
+    },
+    {
+      "m_phone": "18980107121",
+      "m_name": "赵全明",
+      "order_count": 0,
+      "fs_count": 0,
+      "is_dz": false,
+      "grade": 1,
+      "order_month": 0,
+      "je_month": 0.0,
+      "je_count": 0.0,
+      "m_id": 124181
+    },
+    {
+      "m_phone": "15328692598",
+      "m_name": "苏英",
+      "order_count": 0,
+      "fs_count": 0,
+      "is_dz": false,
+      "grade": 1,
+      "order_month": 0,
+      "je_month": 0.0,
+      "je_count": 0.0,
+      "m_id": 124184
+    },
+    {
+      "m_phone": "18981010288",
+      "m_name": "李丽",
+      "order_count": 0,
+      "fs_count": 0,
+      "is_dz": false,
+      "grade": 1,
+      "order_month": 0,
+      "je_month": 0.0,
+      "je_count": 0.0,
+      "m_id": 124188
+    },
+    {
+      "m_phone": "18980101098",
+      "m_name": "孔令欣",
+      "order_count": 0,
+      "fs_count": 0,
+      "is_dz": false,
+      "grade": 1,
+      "order_month": 0,
+      "je_month": 0.0,
+      "je_count": 0.0,
+      "m_id": 130767
+    },
+    {
+      "m_phone": "18990229501",
+      "m_name": "陈波",
+      "order_count": 0,
+      "fs_count": 0,
+      "is_dz": false,
+      "grade": 1,
+      "order_month": 0,
+      "je_month": 0.0,
+      "je_count": 0.0,
+      "m_id": 130768
+    }
+  ],
+  "data": 6,
+  "top_hall": {
+    "mins": 1,
+    "top": 1,
+    "text": "您的厅店距离上一名还差<span class=\"ranking_div_content_span\">1</span>单",
+    "order": 31
+  },
+  "hall": {
+    "manage_name": "王书生",
+    "hall_id": 1251,
+    "manage_id": "124175",
+    "hall_name": "长江西路体验馆",
+    "manage_phone": "18117944044",
+    "com_name": "德阳分公司"
+  },
+  "status": 0
+}

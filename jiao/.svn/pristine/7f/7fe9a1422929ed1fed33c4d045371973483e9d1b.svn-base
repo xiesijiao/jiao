@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/visual.css?v=2">
+    <script src="./js/media_750.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="visual_div">
+            <h1>首次进入需要输入授权码</h1>
+            <div class="visual_div_login">
+                <div class="line_style">
+                    <input type="text" placeholder="请输入您的授权码" maxlength="9" v-model.trim="userCode" @blur="getCode">
+                </div>
+                <div class="hint_height">
+                    <div class="hint_div" v-if="isShow">
+                        <img src="./images/visual/hint.png" alt="" class="hint_div_img">
+                        <span>无效授权码</span>
+                    </div>
+                </div>
+                <div class="visual_btn" @click.prevent="loginBtn">
+                    <p>确定</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var w = new Vue({
+            el: "#app",
+            data: {
+                userCode: "", mess: "", isShow: false
+            },
+            methods: {
+                getCode: function () {
+                    let reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{9}$/;
+                    if (reg.test(this.userCode) && !this.userCode == "") {
+                        this.isShow = ""
+                        return true
+                    }
+                    else {
+                        this.isShow = true
+                        return false
+                    }
+                },
+                loginBtn: function () {
+                    if (this.getCode()) {
+                        console.log(this.userCode)
+                    }
+                }
+            },
+
+        });
+    </script>
+</body>
+
+</html>

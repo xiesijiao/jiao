@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title>绑定银行卡</title>
+    <link rel="stylesheet" href="./css/bind_card.css?v=4">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/media_750.js"></script>
+</head>
+
+<body>
+    <div id="app">
+            <div class="card_center">
+                <div class="card_center_info">
+                    <p class="title">银行卡信息</p>
+                    <div class="card_img">
+                            <div class="card_img_one">
+                                <p>中国银行</p>
+                            </div>
+                            <p class="card_img_p_one">6325   ****   ****   2632</p>
+                            <div class="name_div">
+                                <p>李四</p>
+                            </div>
+                    </div>
+                    <div class="exchange_btn" @click="exchangeClick">
+                        <img src="./images/bank_card/exchange.png" alt="">
+                        <p>更换银行卡</p>
+                    </div>
+                </div>  
+            </div>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+
+            },
+            mounted() {
+               
+            },
+            methods: {
+                exchangeClick:function(){
+
+                },
+               
+            },
+        });
+    </script>
+</body>
+
+</html>

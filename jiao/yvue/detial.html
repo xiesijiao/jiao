@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./js/media_750.js"></script>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <!-- 文字部分 -->
+            <div class="container_produce">
+                <div class="container_text">
+                    <img src="./img/img_03.gif" alt="">
+                    <div class="container_text1">
+                        <p class="p_style">共抗疫情：<span>[现货]阿道夫亲肤酒精消毒液100ml</span></p>
+                        <a  class="p_style p_style1">领[20元优惠券]加购物车</a>
+                        <a class="p_style p_style1">电信专享福利价仅[11.9]秒杀</a>
+                    </div>
+                    <div class="container_text2">
+                        <p class="p_style">[推荐理由]：<span>111w我我我我我欧文WO WO WO W1111gsdfdfjjjjjjjjhjhfghhhhhhhhhhhhhhhhhhgdfsgdfsgdfsgfdsdfsgdfs11111111111111111111fsdafsadfsdfsadfasd11111111111333333333333333333333333333333333333</span></p>
+                    </div>
+                    <div class="container_text3">
+                         <span class="p_style">下单方式：<a class="p_style">点击链接领取专属优惠券购买</a></span>
+                    </div>
+                </div>
+            </div>
+            <!-- btn -->
+            <div class="container_btn" >
+               <button class="container_btn_one" @click="handleClick"><img src="./img/copy.png" alt="" class="copy_img">复制链接</button>
+               <button class="container_btn_two" @click="closeBtn"><img src="./img/wechat.png" alt="" class="copy_img">分享给好友</button>
+            </div>
+        </div>
+        <div class="card" v-if="isShow" @click="closeBtn"></div>
+    </div>
+    <script>
+    var vm= new Vue({
+            el:"#app",
+            data:{
+                isShow:false
+            },
+            methods: {
+                handleClick:function(){
+                   this.isShow = true
+                },
+                closeBtn:function(){
+                     this.isShow=!this.isShow
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>

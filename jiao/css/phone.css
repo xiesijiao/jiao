@@ -1,0 +1,45 @@
+* {margin: 0;padding: 0;-webkit-tap-highlight-color:transparent;}
+a {text-decoration: none;color: black;}
+li {list-style: none;}
+body {background-color: #eaeaea;}
+#app {
+  -webkit-user-select: none;
+  -webkit-text-size-adjust: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+[v-cloak] {
+ display: none;
+ }
+
+.phone_content{
+    width: 6em;
+    height: 4rem;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+}
+.phone_content>input{
+    height: 0.88rem;
+    text-align: center;
+    font-size: 0.3rem;
+    border-radius: 0.2rem;
+    border-style: none;
+    border: 1px solid #e8e8e8;
+  font-family: PingFangSC-Medium,PingFang SC;
+
+}
+.phone_content>button{
+     width: 6rem;
+     height: 0.88rem;
+     margin-top: 0.6rem;
+     background-color: #FF6053;
+      border-radius: 0.2rem;
+    border-style: none;
+     font-size: 0.3rem;
+     color: white;
+     font-family: PingFangSC-Medium,PingFang SC;
+}

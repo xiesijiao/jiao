@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>任务中心</title>
+    <script src="./js/public_js/vue.js"></script>
+    <script src="./js/public_js/axios.js"></script>
+    <script src="./js/media_750.js"></script>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/task_list.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="task_list_wrapper">
+            <div class="task_list_header">
+                <img src="./images/task_list/bg.jpg" alt="">
+            </div>
+            <ul class="task_list_content">
+                <li>
+                    <div class="task_list_content_div_left f">
+                        <div class="time_box">
+                            <p>9:00-10:00</p>
+                        </div>
+                        <h1 class="task_title">早安问候</h1>
+                        <p class="task_state">定时问候 唤醒用户</p>
+                    </div>
+                    <div class="task_list_content_div_right r">
+                        <div class="btn btn_background_overdue">
+                            <p>已过期</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="bg_finish_img">
+                    <div class="task_list_content_div_left f">
+                        <div class="time_box">
+                            <p>10:45-11:30</p>
+                        </div>
+                        <h1 class="task_title">早市商品发布</h1>
+                        <p class="task_state">定时完成转发 培养用户习惯</p>
+                    </div>
+                    <div class="task_list_content_div_right r ">
+                        <div class="btn btn_background_finish">
+                            <p>已完成</p>
+                        </div>
+                        <img src="./images/task_list/finish.png" alt="" class="finish_img">
+                    </div>
+                </li>
+                <li>
+                    <div class="task_list_content_div_left f">
+                        <div class="time_box">
+                            <p>18:45-19:30</p>
+                        </div>
+                        <h1 class="task_title">晚市商品发布</h1>
+                        <p class="task_state">定时完成转发 培养用户习惯</p>
+                    </div>
+                    <div class="task_list_content_div_right r">
+                        <div class="btn btn_background_begin">
+                            <p>待开始</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="task_list_content_div_left f">
+                        <div class="time_box">
+                            <p>14:00-22:00</p>
+                        </div>
+                        <h1 class="task_title">爆品推荐</h1>
+                        <p class="task_state">每日热销爆品 增加销量神器</p>
+                    </div>
+                    <div class="task_list_content_div_right r">
+                        <div class="btn btn_background_finish_two">
+                            <div class="mark">4</div>
+                            <p>已完成</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {},
+            mounted() {
+
+            },
+            methods: {
+
+            }
+        });
+    </script>
+</body>
+
+</html>

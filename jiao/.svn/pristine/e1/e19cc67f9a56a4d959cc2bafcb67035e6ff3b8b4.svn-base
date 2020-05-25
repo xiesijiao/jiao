@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./js/media_750.js"></script>
+    <link rel="stylesheet" href="./css/detial.css">
+</head>
+<body>
+    <div id="app">
+        <div class="de_content">
+             <div class="de_content_top"></div>
+             <div class="de_content_bottom">
+                 <div class="de_content_bottom_first">
+                     <span>第一步</span>
+                     <p>长按海报图片转发微信群或保存到相册</p>
+                 </div>
+                 <div class="de_content_bottom_two">
+                     <img src="./images/details/detailscontent.png" alt="">
+                 </div>
+                <div class="de_content_bottom_first ">
+                    <span>第二步</span>
+                    <p>复制文案转发微信群或朋友圈文案</p>
+                </div>
+                <div class="de_content_bottom_three">
+                    <div class="de_content_bottom_three_content">
+                        <p>【志高】<span>物理灭蚊灯灭蚊神器</span></p>
+                        <p>【原价】：<span>38.9元</span></p>
+                        <p>【券后价】:<span>8.9元</span></p>
+                        <p>【推荐理由】:<span>环保灭蚊，孕婴可用，拎环设计紫灯强力诱蚊+涡流旋风瞬间捕蚊~静音捕蚊让你和孩子无蚊扰，睡得更香！</span></p>
+                        <p>【抢购链接】：<span>http://nxw.so/3LLAp</span></p>
+                    </div>
+                </div>
+                <div class="de_content_bottom_four">
+                        <img src="./images/details/btn1.png" alt="" class="de_content_bottom_four_btn">
+                        <img src="./images/details/btn2.png" alt="" class="de_content_bottom_four_btn">
+                </div>
+             </div>
+        </div>
+    </div>
+</body>
+</html>

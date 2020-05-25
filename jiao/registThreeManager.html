@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Document</title>
+    <script src="./js/media_750.js"></script>
+    <link rel="stylesheet" href="./css/regist.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        
+        <div class="regist_box">
+            <p class="regist_box_p">请补充以下信息</p>
+            <div class="regist_content">
+                <form action="" @submit.prevent="submit">
+                    <!-- 所属分公司 -->
+                    <div class="form_div">
+                        <div class="form_div_left">
+                            <img src="./img/suohsufengongsiicon@2x.png" alt="" class="name_img">
+                        </div>
+                        <div class="form_div_right  form_div_right_two">
+                            <p class="form_div_right_p">所属分公司</p>
+                            <select class="form_div_right_se" v-model.trim="user.company" @blur="getCompany">
+                                <option value="成都">成都</option>
+                                <option value="绵阳">绵阳</option>
+                                <option value="内江">内江</option>
+                            </select>
+                            <img src="./img/trans.png" alt="" class="trans">
+                        </div>
+                    </div>
+                    <!--渠道Id -->
+                    <div class="form_div">
+                        <div class="form_div_left">
+                            <img src="./img/id2xicon.png" alt="" class="name_img">
+                        </div>
+                        <div class="form_div_right">
+                            <p class="form_div_right_p">渠道ID</p>
+                            <input type="text" name="phone" id="" v-model.trim="user.id" maxlength="9"
+                                placeholder="请输入渠道ID" class="form_div_right_inp" @blur="getId">
+                        </div>
+                    </div>
+                    <!-- 渠道名称 -->
+                    <div class="form_div">
+                        <div class="form_div_left">
+                            <img src="./img/companyicon@2x.png" alt="" class="name_img">
+                        </div>
+                        <div class="form_div_right">
+                            <p class="form_div_right_p">渠道名称</p>
+                            <input type="text" name="user.verificationCode" id="" v-model.trim="user.channel"
+                                placeholder="请输入厅店名称" class="form_div_right_inp" maxlength="9" @blur="getChannel">
+                        </div>
+                    </div>
+                    <!-- 所属代理商 -->
+                    <div class="form_div">
+                        <div class="form_div_left">
+                            <img src="./img/dailishang2x.png" alt="" class="name_img">
+                        </div>
+                        <div class="form_div_right">
+                            <p class="form_div_right_p">所属代理商id</p>
+                            <input type="text" name="agent" id="" v-model.trim="user.agent" maxlength="9" @blur="getAgent"
+                                placeholder="请输入所属代理商id" class="form_div_right_inp">
+                        </div>
+                    </div>
+                    <button class="submit_btn" @click.prevent="submit">注册</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                user: {
+                    company: "",
+                    id: "",
+                    channel: "",
+                    agent: ""
+                },
+            },
+            methods: {
+                getCompany() {
+                    if (!this.company == "") {
+                        return true
+                    } else {
+                        return false
+                    }
+                },
+                getId() {
+                    let reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{9}$/;
+                    if (reg.test(this.user.id) && !this.user.id == "") {
+                        return true
+                    }
+                    else {
+                        return false
+                    }
+                },
+                getChannel() {
+                    let reg = /[\u4e00-\u9fa5]/g;
+                    if (reg.test(this.user.channel) && !this.user.channel == "") {
+                        return true
+                    } else {
+                        return false
+                    }
+                },
+                getAgent() {
+                     let reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{9}$/;
+                    if (reg.test(this.user.agent) && !this.user.agent == "") {
+                        return true
+                    } else {
+                        return false
+                    }
+                },
+                submit() {
+                    // this.isShow = !this.isShow
+                    if (this.getCompany() && this.getId() && this.getChannel() && this.getAgent()) {
+                        console.log(vm.user)
+                    }
+
+                }
+            },
+
+        });
+    </script>
+</body>
+
+</html>

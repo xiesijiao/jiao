@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Document</title>
+    <script src="./js/media_750.js"></script>
+    <link rel="stylesheet" href="./css/redeem.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="app_redeem">
+                <div class="app_redeem_content">
+                    <div class="app_redeem_content_div">
+                        <img src="./img/mm667.png" alt="" >
+                    </div>
+                     <input type="text" name="" id="" placeholder="请输入您的专属兑换码" class="app_redeem_content_inp" v-model="userMessage" maxlength="9" @blur="getUserMessage">
+                     <div  class="app_redeem_content_div2" v-if="errBox" >
+                         <img src="./img/c2222x.png" alt="">
+                         <span>无效兑换码</span>
+                     </div>
+                     <div class="app_redeem_content_div3">
+                         <p>输入兑换码，即可兑换奖品请谨慎填写</p>
+                         <div class="redeem_btn" @click="immediatelyChange">
+                             <p>立即兑换</p>
+                         </div>
+                     </div>
+                </div>
+        </div>
+        <!-- 模态框1 -->
+        <div class="card" v-if="isShow">
+            <div class="card_redeem">
+                <div class="card_redeem_img">
+                    <div class="card_redeem_img_content">
+                        <img src="./img/diamond.png" alt="">
+                        <span>200积分</span>
+                    </div>
+                </div>
+                <p class="card_redeem_p">恭喜您获得200积分</p>
+                <div class="redeem_btn2">
+                    <p>确定</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                errBox:false,
+                isShow:false,
+                userMessage:""
+            },
+            methods: {
+                 getUserMessage:function(){
+                    let reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{9}$/;
+                    if (reg.test(this.userMessage)) {
+                       this.errBox = ""
+                       return true
+                    }else{
+                          this.errBox =true
+                          return false
+                    }
+                },
+                  immediatelyChange:function() {
+                    if (this.getUserMessage()) {
+                         console.log(this.userMessage);
+                         this.isShow=true
+                    }
+                }
+            },
+        });
+    </script>
+</body>
+</html>

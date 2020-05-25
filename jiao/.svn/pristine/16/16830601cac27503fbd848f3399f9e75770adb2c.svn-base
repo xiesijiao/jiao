@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>任务中心</title>
+    <script src="./js/public_js/vue.js"></script>
+    <script src="./js/public_js/axios.js"></script>
+    <script src="./js/media_750.js"></script>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/task_list.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="task_list_wrapper">
+            <div class="task_list_header">
+                <img src="./images/task_list/bg.jpg" alt="">
+            </div>
+            <ul class="task_list_content">
+                <li v-for="(item,index) in taskList" :key=index @click.prevent="tab(index)">
+                    <div class="task_list_content_div_left f">
+                        <div class="time_box">
+                            <p>{{item.times}}</p>
+                        </div>
+                        <h1 class="task_title">{{item.title}}</h1>
+                        <p class="task_state">{{item.desc}}</p>
+                    </div>
+                    <div class="task_list_content_div_right r">
+                        <div class="btn" :class='isStatus(item.status).color'>
+                            <p>{{isStatus(item.status).title}}</p>
+                            <div :class="{mark:(item.counts>0)}">{{item.counts==0?'':item.counts}}</div>
+                        </div>
+                        <img src="./images/task_list/finish.png" alt="" class="finish_img" v-if="item.status==2">
+                    </div>
+                </li>     
+            </ul>
+        </div>
+
+    </div>
+    <script>
+        var w = new Vue({
+            el: "#app",
+            data: {
+                taskList: [], 
+            },
+            mounted() {
+                this.getTask();
+
+            },
+            computed: {
+                isStatus() {
+                    return (status) => {
+                        switch (status) {
+                            case 1:
+                                return { title: '待开始', color: ' btn_background_begin' }
+                            case 2:
+                                return { title: '已完成', color: 'btn_background_finish' }
+                            case 3:
+                                return { title: '待完成', color: 'btn_background_finish_two' }
+                            case 4:
+                                return { title: '已结束', color: 'btn_background_overdue' }
+                        }
+                    }
+                }
+            },
+            methods: {
+                getTask: function () {
+                    axios.get("/bstuan/api/channel/getMyTask").then(function (res) {
+                        console.log(res.data.task);
+                        w.taskList = res.data.task;
+                    })
+                },
+                tab:function(index){
+                    console.log(index)
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

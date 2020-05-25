@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0; }
+a{text-decoration: none;}
+body{background-color: #e7e7e7;}
+#app {font-size:12px;-webkit-user-select:none;-webkit-text-size-adjust:none;font-family:helvetica;height: 100%;width: 100%;}
+.container{width: 6.58rem;height: 11.66rem;margin: 0.5rem auto;}
+.container_produce{width: 6.58rem;height: 9rem;background-color: white;border-radius: 0.12rem;display: flex;justify-content: center;align-items:center;box-shadow: 0px 0.02rem 0.4rem 0px #d0c1c3;}
+.container_text{width: 5.78rem;}
+.container_text>img{width: 2.8rem; height: 2.8rem;margin-bottom: 0.7rem;}
+.container_text1,.container_text2{border-bottom:1px  dashed  #222222; word-break: break-all; }
+.p_style{ line-height: 0.4rem; font-size: 0.24rem; color: #222222; overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;}
+.p_style1{display: block;}
+.container_text2{margin-top:0.3rem;}
+.container_text3{margin-top: 0.4rem;}
+/* btn */
+.container_btn{width: 6.55rem;height: 1.04rem;margin: 0.6rem auto;display: flex;justify-content: space-between;}
+.container_btn>button{width: 3.1rem;height: 1rem;border-style: none;border-radius: 0.3rem;color: white;font-size: 0.36rem;}
+.container_btn_one{background-color: #c5771b;}
+.copy_img{width: 0.36rem;height: 0.36rem;}
+.container_btn_two{background-color: #c5281b;}
+/* 弹窗 */
+.card{width: 100%;height: 100%;background-image: url("../yvue/img/img_005.png");background-size: 100% 100%;position: fixed;top: 0;left: 0;}

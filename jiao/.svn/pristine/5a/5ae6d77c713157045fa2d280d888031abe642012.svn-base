@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+    content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta http-equiv="Cache" content="no-cache">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>个人中心</title>
+<script src="./js/public_js/vue.js"></script>
+<script src="./js/public_js/axios.js"></script>
+<script src="./js/media_750.js"></script>
+<script src="./js/public_js/toast.js"></script>
+<link rel="stylesheet" href="./css/public.css">
+<link rel="stylesheet" href="./css/person_homepage.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 头部个人资料 -->
+        <header  class="person_homepage_header">
+            <div class="person_homepage_header_content">
+                <div class="person_homepage_header_content_left f font">
+                    <img src="./images/person_homepage/header.png" alt="">
+                    <p>店长</p>
+                    <span>ID:123422</span>
+                </div>
+                <div class="person_homepage_header_content_right f">
+                    <div class="person_homepage_header_content_right_one font">
+                        <p class="f">德格·格桑旺堆格桑旺堆</p>
+                        <div class="r">个人资料</div>
+                    </div>
+                    <div class="person_homepage_header_content_right_two">
+                        <p>甘孜州分公司</p>
+                        <p>内部测试厅店内部测试厅店</p>
+                    </div>
+                    <div class="person_homepage_header_content_right_three">
+                        <div class="join_day f font">
+                            <p>已加入108天</p>
+                        </div>
+                        <div class="invitation_code r">
+                            <p class="f">CW03TA001</p>
+                            <div class="r">
+                               <p>复制邀请码</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- 佣金展示 -->
+        <div class="person_homepage_content">
+            <!-- 居中包裹 -->
+            <div class="person_homepage_content_center">
+                <div class="personal_rating">
+                     <div class="personal_rating_display f font">
+                        铜牌渠道
+                     </div>
+                     <div class="question_mark f">
+                         <p>？</p>
+                     </div>
+                </div>
+                <!-- 累计收益 -->
+                <div class="accumulated_income">
+                    <div class="accumulated_income_one">
+                        <p class="f">累计收益</p>
+                        <img src="./images/person_homepage/accumulated_income_bt.png" alt="" class="f">
+                    </div>
+                    <p class="accumulated_income_price font">1258.8</p>
+                </div>
+                <!-- 本月预估 上月收益 -->
+                <div class="forecast_earnings">
+                        <div class="forecast_earnings_price"></div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- icon -->
+        <div class="person_homepage_icon"></div>
+    </div>
+</body>
+</html>

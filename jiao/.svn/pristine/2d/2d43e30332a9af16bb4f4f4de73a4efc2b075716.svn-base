@@ -1,0 +1,38 @@
+{
+  "task": [
+    {
+      "times": "9:30-10:30",
+      "types": 1,
+      "counts": 0,
+      "title": "早安问侯",
+      "desc": "定时问侯，唤醒用户",
+      "status": 4
+    },
+    {
+      "times": "10:45-11:30",
+      "types": 2,
+      "counts": 2,
+      "title": "早市商品发布",
+      "desc": "定时完成转发，培养用户习惯",
+      "status": 2
+    },
+    {
+      "times": "18:45-19:30",
+      "types": 3,
+      "counts": 0,
+      "title": "晚市场商品发布",
+      "desc": "定时完成转发，培养用户习惯",
+      "status": 1
+    },
+    {
+      "times": "14:00-22:00",
+      "types": 4,
+      "counts": 3,
+      "title": "每日热销",
+      "desc": "每日热销爆品，增加销量神器",
+      "status": 3
+    }
+  ],
+  "size": 4,
+  "stauts": 0
+}

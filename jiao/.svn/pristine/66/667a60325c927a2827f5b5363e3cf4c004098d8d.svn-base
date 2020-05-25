@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>新聚合页</title>
+    <script src="./js/public_js/vue.js"></script>
+    <script src="./js/public_js/axios.js"></script>
+    <script src="./js/media_750.js"></script>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/store.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="shop_top">
+            <!-- banner -->
+            <div class="shop_header">
+                <img src="./images/shop/bannar.png" alt="">
+            </div>
+            <!-- 爆品区+专题区 -->
+            <div class="shop_main_product">
+                <!-- 倒计时 -->
+                <div class="shop_main_product_one">
+                    <div class="count_down_wraper">
+                        <h1 class="title_font f">福利天天拿</h1>
+                        <div class="r count_down  font" >
+                            <p class="count_down_m ">距开抢</p>
+                            <div class="count_down_item r">00</div>
+                            <p class="r count_down_item_p">:</p>
+                            <div class="count_down_item r">28</div>
+                            <p class="r count_down_item_p">:</p>
+                            <div class="count_down_item r ">06</div>
+                        </div>
+                    </div>
+                    <!-- 爆品专区 -->
+                    <div class="shop_main_product_one_content font">
+                            <h1>蒙牛特仑苏 全脂早餐奶 250mlX12盒</h1>
+                            <!-- 标签部分 -->
+                            <div class="commodity_title">
+                                <div class="commodity_title_one f">
+                                    <p>100% 生牛乳</p>
+                                </div>
+                                <div class="commodity_title_one f">
+                                    <p>120mg乳钙</p>
+                                </div>
+                                <div class="commodity_title_one f">
+                                    <p>3.6g蛋白质/100ml</p>
+                                </div>
+                            </div>
+                            <!-- 展示区域 -->
+                            <div class="shop_main_product_display">
+                                <div class="shop_main_product_display_left f">
+                                    <img src="./images/shop/milk.jpg" alt="">
+                                </div>
+                                <div class="shop_main_product_display_right r font">
+                                    <div class="shop_main_product_price">
+                                        <div class="shop_main_product_price_now">
+                                            <p class="shop_main_product_price_now_p f">
+                                                <span class="shop_main_product_price_now_span">￥</span>29<span  class="shop_main_product_price_now_span">.9</span>
+                                                <span class="shop_main_product_price_base">￥59.9</span>
+                                            </p>
+                                        </div>
+                    
+                                    </div>
+                                    <!-- 券 -->
+                                    <div class="shop_main_product_ticket" >
+                                            <div class="shop_main_product_ticket_left f">
+                                                <p>200元</p>
+                                                <p>天翼奥莱专享券</p>
+                                            </div>
+                                            <div class="shop_main_product_ticket_right r">
+                                                <p>马上抢</p>
+                                            </div>
+                                    </div>
+                                    <!-- 进度条 -->
+                                    <div class="progress_wrapper_box  font" >
+                                        <div class="progress_wrapper f">
+                                            <p>{{theme.ticket_rate}}%</p>
+                                            <div class="progress_content" :style="{width:(theme.ticket_rate<10?10:theme.ticket_rate)+'%'}">
+                                            </div>
+                                        </div>
+                                        <p class="progress_wrapper_box_p r">仅剩{{theme.ticket_valid}}件</p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>  
+                </div>
+                <!-- 专题区 -->
+                <div class="shop_main_product_one_prefecture">
+                    <h1 class="title_font_else f">好货天天抢</h1>
+                   <ul class="slide_box">
+                       <li class="slide_item">
+                           <img src="./images/shop/pic_one.png" alt="">
+                       </li>
+                       <li class="slide_item">
+                           <img src="./images/shop/pic_two.png" alt="">
+                       </li>
+                    <li class="slide_item">
+                        <img src="./images/shop/pic_two.png" alt="">
+                    </li>
+                   </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                theme:{
+                    ticket_rate:10,
+                    ticket_valid:997
+                }
+            },
+            mounted() {
+
+            },
+            methods: {
+
+            },
+        });
+    </script>
+</body>
+
+</html>

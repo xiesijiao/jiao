@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>订单销量</title>
+   
+    <link rel="stylesheet" href="./css/order_information.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/media_750.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 页面头部 -->
+        <div class="order_information_header">
+            <div>
+                <ul class="order_information_content">
+                    <li><a @click.prevent="tab(1)" :class="{active:(cureItem==1)}">1小时</a></li>
+                    <li><a @click.prevent="tab(2)" :class="{active:(cureItem==2)}">2小时</a></li>
+                    <li><a @click.prevent="tab(3)" :class="{active:(cureItem==3)}">今日</a></li>
+                    <li><a @click.prevent="tab(4)" :class="{active:(cureItem==4)}">昨日</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="order_information_list">
+            <ul class="order_information_list_info">
+                <li><p>商品名称</p></li>
+                <li><p>订单量</p></li>
+                <li><p>销售额</p></li>
+                <li><p>佣金</p></li>
+            </ul>
+            <ul class="order_information_list_info_one" >
+                <li>
+                    <div>
+                        <p>{{item.item_title}}</p>
+                    </div>
+                    <div>{{item.ordercount}}单</div>
+                    <div>¥{{item.gmv}}</div>
+                    <div>¥{{item.fee}}</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var w = new Vue({
+            el: "#app",
+            data: {
+                cureItem: 2,dataList:[],
+            },
+            mounted() {
+                axios.get("/bstuan/api/channel/getGoodsOrderTop?t=2").then(function(res){
+                    console.log(res.data.goods);
+                    w.dataList= res.data.goods
+                })
+            },
+            methods: {
+                tab: function (itemid) {
+                    w.cureItem = itemid
+                    axios.get("/bstuan/api/channel/getGoodsOrderTop?t="+itemid).then(function (res) {
+                        console.log(res.data.goods);
+                        w.dataList = res.data.goods
+                    })
+            }
+        }
+    });
+    </script>
+</body>
+
+</html>

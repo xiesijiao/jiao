@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title>数据展示</title>
+    <link rel="stylesheet" href="./css/visual.css?v=6">
+    <script src="./js/media_750.js"></script>
+    <script src="https://cdn.bootcss.com/echarts/4.7.0/echarts-en.common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+<div id="app">
+    <!-- 页面头部 -->
+    <div class="visual_header">
+        <div>
+            <ul class="visual_header_content">
+                <li><a @click.prevent="tab(1)" :class="{active:(cureItem==1)}">昨日</a></li>
+                <li><a @click.prevent="tab(2)" :class="{active:(cureItem==2)}">今日</a></li>
+                <li><a @click.prevent="tab(3)" :class="{active:(cureItem==3)}">本月</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 切换页面 -->
+    <div class="container">
+        <!-- 滑动区域 -->
+        <div class="visual_scroll">
+            <ul>
+                <li v-for="(item,index) in orders" :key=index>
+                    <!-- 订单数 -->
+                    <div class="visual_scroll_div_order">
+                        <div class="visual_scroll_div_order_one">
+                            <p>订单数</p>
+                            <img :src=item.up alt="">
+                        </div>
+                        <p class="order_p">{{orders.orders}}</p>
+                        <p class="grow">{{orders.s_orders}}</p>
+                    </div>
+                </li>
+                <li>
+                    <!-- 新增活跃 -->
+                    <div class="visual_scroll_div_order">
+                        <div class="visual_scroll_div_order_one">
+                            <p>新增活跃</p>
+                            <img src="./images/visual/down.png" alt="">
+                        </div>
+                        <p class="order_p_one">2647</p>
+                        <p class="grow">环比减少<span>999</span></p>
+                    </div>
+                </li>
+                <li>
+                    <!-- pv -->
+                    <div class="visual_scroll_div_order">
+                        <div class="visual_scroll_div_order">
+                            <div class="visual_scroll_div_order_one">
+                                <p>pv</p>
+                                <img src="./images/visual/up.png" alt="">
+                            </div>
+                            <p class="order_p">2647</p>
+
+                            <p class="grow">环比增长<span>999</span></p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <!-- uv -->
+                    <div class="visual_scroll_div_order">
+                        <div class="visual_scroll_div_order">
+                            <div class="visual_scroll_div_order_one">
+                                <p>uv</p>
+                                <img src="./images/visual/down.png" alt="">
+                            </div>
+                            <p class="order_p_one">2647</p>
+
+                            <p class="grow">环比减少<span>999</span></p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <!-- GMV -->
+                    <div class="visual_scroll_div_order">
+                        <div class="visual_scroll_div_order">
+                            <div class="visual_scroll_div_order_one">
+                                <p>GMV</p>
+                                <img src="./images/visual/up.png" alt="">
+                            </div>
+                            <p class="order_p">2647</p>
+
+                            <p class="grow">环比增长<span>999</span></p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 内容部分 -->
+        <div class="visual_content">
+            <div class="make_content">
+                <!-- echarts -->
+                <div class="make_content_one">
+                    <div id="echarts" ref="echarts"></div>
+                    <div class="make_content_one_right">
+                        <ul>
+                            <li class="list">
+                                <img src="./images/visual/one.png" alt="" class="echart_img">
+
+                                <div class="list_order_div">
+                                    <p>订单数100+厅店</p>
+                                    <span class="order_span">达标140家 54%</span>
+                                </div>
+                            </li>
+                            <li class="list">
+                                <img src="./images/visual/two.png" alt="" class="echart_img">
+
+                                <div class="list_order_div">
+                                    <p>订单数50~99厅店</p>
+                                    <span class="order_span">达标140家 54%</span>
+                                </div>
+                            </li>
+                            <li class="list">
+                                <img src="./images/visual/three.png" alt="" class="echart_img">
+
+                                <div class="list_order_div">
+                                    <p>订单数1~49厅店</p>
+                                    <span class="order_span">达标140家 54%</span>
+                                </div>
+                            </li>
+                            <li class="list">
+                                <img src="./images/visual/four.png" alt="" class="echart_img">
+
+                                <div class="list_order_div">
+                                    <p>订单数0厅店</p>
+                                    <span class="order_span">达标140家 54%</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="total_div">
+                        <p>成交厅店数</p>
+                        <span>{{ hall.hall_count }}</span>
+                    </div>
+                </div>
+                <!-- top榜单 -->
+                <ul class="make_content_two">
+                    <li class="top_people">
+                        <img src="./images/visual/champion.png" alt="" class="top_people_img">
+
+                        <div class="top_people_info">
+                            <p>张十四三二一六六六</p>
+
+                            <div class="location_div">
+                                <img src="./images/visual/location.png" alt="" class="location_img">
+                                <span>成都市</span>
+                                <span>金牛区</span>
+                            </div>
+                        </div>
+                        <div class="top_people_cup">
+                            <img src="./images/visual/cup.png" alt="">
+                            <span>2234</span>
+                        </div>
+                    </li>
+                    <li class="top_people">
+                        <img src="./images/visual/runner_up.png" alt="" class="top_people_img">
+
+                        <div class="top_people_info">
+                            <p>张十四三二一六六六</p>
+
+                            <div class="location_div">
+                                <img src="./images/visual/location.png" alt="" class="location_img">
+                                <span>成都市</span>
+                                <span>金牛区</span>
+                            </div>
+                        </div>
+                        <div class="top_people_cup">
+                            <img src="./images/visual/cup.png" alt="">
+                            <span>2234</span>
+                        </div>
+                    </li>
+                    <li class="top_people">
+                        <img src="./images/visual/army_war.png" alt="" class="top_people_img">
+
+                        <div class="top_people_info">
+                            <p>张十四三二一六六六</p>
+
+                            <div class="location_div">
+                                <img src="./images/visual/location.png" alt="" class="location_img">
+                                <span>成都市</span>
+                                <span>金牛区</span>
+                            </div>
+                        </div>
+                        <div class="top_people_cup">
+                            <img src="./images/visual/cup.png" alt="">
+                            <span>2234</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 分公司排行展示 -->
+        <div class="ranking_list">
+            <h1>地区TOP排行榜</h1>
+            <ul class="ranking_list_info">
+                <li>
+                    <p>地区</p>
+                    <span>成都</span>
+                </li>
+                <li>
+                    <p>活力值</p>
+                    <span>21763</span>
+                </li>
+                <li>
+                    <p>破冰率(30+)</p>
+                    <span>50%</span>
+                </li>
+            </ul>
+            <ul class="ranking_list_info_one">
+                <li>
+                    <span>成都</span>
+                    <span>21763</span>
+                    <span>100%</span>
+                </li>
+                <li>
+                    <span>成都</span>
+                    <span>21763</span>
+                    <span>70%</span>
+                </li>
+                <li>
+                    <span>成都</span>
+                    <span>21763</span>
+                    <span>59%</span>
+                </li>
+                <li>
+                    <span>成都</span>
+                    <span>21763</span>
+                    <span>50%</span>
+                </li>
+                <li>
+                    <span>成都</span>
+                    <span>21763</span>
+                    <span>44%</span>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div style="height:0.3rem"></div>
+</div>
+<script>
+    var w = new Vue({
+        el: "#app",
+        data: {cureItem: 2, orders: {}, pv: {}, uv: {}, pmv: {}, hall: {}},
+        mounted: function () {
+            // this.initEcharts();
+            axios.get("/bstuan/api/channel/getLeaderViewData", {params: {t: 2}}).then(function (res) {
+                console.log(res)
+                w.orders = res.data.orders.orders;
+                w.pv = res.data.orders.pv;
+                w.uv = res.data.orders.uv;
+                w.activity = res.data.orders.activity;
+                w.pmv = res.data.orders.pmv;
+                w.hall = res.data.hall;
+                w.initEcharts();
+            });
+        },
+        methods: {
+            // echarts方法
+            initEcharts: function () {
+                let myChart = echarts.init(w.$refs.echarts);
+                option = {
+                    color: ['rgba(255,93,75,1)', 'rgba(232,232,232,1)', 'rgba(255,231,113,1)', 'rgba(255,164,108,1)'],
+                    title: {text: '成交厅店数', x: 'left'},
+                    series: [
+                        {
+                            name: '成交厅店数',
+                            type: 'pie',
+                            radius: ['50%', '90%'],
+                            avoidLabelOverlap: false,
+                            label: {show: false, position: 'center'},
+                            labelLine: {show: false},
+                            data: [
+                                {value: w.hall.act_100, name: '订单数100+厅店'},
+                                {value: w.hall.act_50, name: '订单数50~99厅店'},
+                                {value: w.hall.act_1, name: '订单数1-49厅店'},
+                                {value: w.hall.act_0, name: '订单数0厅店'},
+                            ]
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+            },
+            tab: function (itemid) {
+                w.cureItem = itemid
+            }
+        }
+    });
+</script>
+</body>
+
+</html>

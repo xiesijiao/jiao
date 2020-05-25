@@ -1,0 +1,91 @@
+{
+  "data": 1,
+  "zt": { "zt_title": "315题", "zt_id": 1001 },
+  "goodslist": [
+    {
+      "price_now": 166.66,
+      "ticket1": "电信1115元专享券",
+      "img": "http://www.ck-zp.com/images/ysgoods/202003/1585662952079.jpg",
+      "ticket2": "",
+      "gid": 1263633,
+      "gtitle": "【Soffell】泰国驱蚊水80ml",
+      "price_base": 21.0,
+      "gfrom": 1,
+      "has_ticket1": true,
+      "sid": 928,
+      "has_ticket2": false,
+      "glink": "http://wx.mbwly.com/bstuan/channel/show_123420_928.html"
+    },
+    {
+      "price_now": 19.5,
+      "ticket1": "电信6元专享券",
+      "img": "http://www.ck-zp.com/images/ysgoods/202003/1585663099210.jpg",
+      "ticket2": "",
+      "gid": 1263637,
+      "gtitle": "【LIFU】泰国脱毛膏80g",
+      "price_base": 25.5,
+      "gfrom": 1,
+      "has_ticket1": true,
+      "sid": 929,
+      "has_ticket2": false,
+      "glink": "http://wx.mbwly.com/bstuan/channel/show_123420_929.html"
+    },
+    {
+      "price_now": 19.0,
+      "ticket1": "电信6元专享券",
+      "img": "http://www.ck-zp.com/images/ysgoods/202003/1585662822592.jpg",
+      "ticket2": "",
+      "gid": 1263631,
+      "gtitle": "【POONGNEE】泰式颈椎贴6片",
+      "price_base": 25.0,
+      "gfrom": 1,
+      "has_ticket1": true,
+      "sid": 930,
+      "has_ticket2": false,
+      "glink": "http://wx.mbwly.com/bstuan/channel/show_123420_930.html"
+    },
+    {
+      "price_now": 9.5,
+      "ticket1": "电信7元专享券",
+      "img": "http://www.ck-zp.com/images/ysgoods/202003/1585662670255.jpg",
+      "ticket2": "",
+      "gid": 1263625,
+      "gtitle": "【CEKE】免洗洗手液40ml",
+      "price_base": 16.5,
+      "gfrom": 1,
+      "has_ticket1": true,
+      "sid": 931,
+      "has_ticket2": false,
+      "glink": "http://wx.mbwly.com/bstuan/channel/show_123420_931.html"
+    },
+    {
+      "price_now": 9.5,
+      "ticket1": "电信9元专享券",
+      "img": "http://www.ck-zp.com/images/ysgoods/202003/1585662475061.jpg",
+      "ticket2": "",
+      "gid": 1263555,
+      "gtitle": "【Mistine】梦幻润唇膏1.7g ",
+      "price_base": 18.5,
+      "gfrom": 1,
+      "has_ticket1": true,
+      "sid": 932,
+      "has_ticket2": false,
+      "glink": "http://wx.mbwly.com/bstuan/channel/show_123420_932.html"
+    },
+    {
+      "price_now": 19.0,
+      "ticket1": "电信5元专享券",
+      "img": "http://www.ck-zp.com/images/ysgoods/202003/1585662313272.jpg",
+      "ticket2": "",
+      "gid": 1263643,
+      "gtitle": "金皇家泰国足浴包10包/袋",
+      "price_base": 24.0,
+      "gfrom": 1,
+      "has_ticket1": true,
+      "sid": 933,
+      "has_ticket2": false,
+      "glink": "http://wx.mbwly.com/bstuan/channel/show_123420_933.html"
+    }
+  ],
+  "status": 1
+}

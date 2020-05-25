@@ -1,0 +1,133 @@
+/* 分公司统计 */
+.filiale_statistics_header {
+  width: 100%;
+  height: 0.88rem;
+  background-color: #fff;
+}
+.filiale_statistics_content {
+  width: 5.61rem;
+  height: 0.87rem;
+  margin: 0 auto;
+  font-size: 0.32rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  color: rgba(51, 51, 51, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.filiale_statistics_content > li {
+  height: 0.8rem;
+}
+.filiale_statistics_content > li > a {
+  line-height: 0.8rem;
+  padding-bottom: 0.21rem;
+}
+.active {
+  border-bottom: 0.03rem solid #ff0000;
+  color: #ff0000;
+}
+/* 日期显示 */
+
+.filiale_statistics_data {
+  margin-top: 0.1rem;
+  width: 100%;
+  height: 0.88rem;
+  font-size: 0.32rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  color: rgba(51, 51, 51, 1);
+  line-height: 0.88rem;
+  text-align: center;
+}
+/* 数据展示 */
+ .order_information_list{
+  width: 100%;
+  margin: 0.2rem auto 0;
+}
+.order_information_list_info {
+  width: 7.2rem;
+  background-color:#fff;
+  display: flex;
+  margin: 0 auto;
+  border-bottom:1px solid #b8b8b8;
+  border-top:1px solid #b8b8b8;
+}
+.order_information_list_info > li{
+  width: 1.26rem;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  padding: 0.2rem 0;
+}
+
+.order_information_list_info > li > p {
+  font-size: 0.28rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  color:#242424;
+}
+.order_information_list_info_one {
+  margin-top: 0.2rem;
+  width: 7.2rem;
+  display: flex;
+  flex-flow: column;
+   margin: 0 auto;
+}
+.order_information_list_info_one > li {
+  width: 7.2rem;
+  height: 0.5rem;
+  font-size: 0.28rem;
+  display: flex;
+  font-family: PingFangSC-Medium, PingFang SC;
+  color: rgba(51, 51, 51, 1);
+  margin-top:0.4rem;
+}
+.order_information_list_info_one > li>div{
+     width: 1.26rem;
+     text-align: center;
+}
+
+.order_information_list_info_one > li:last-child {
+  margin-bottom: 0.2rem;
+}
+/* 专题数据查询 */
+.theme_title{
+  font-size: 0.38rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  text-align: center;
+}
+.select{
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    font-size: 0.38rem;
+}
+.form_div_right_se{
+  width: 4.2rem;
+  height: 0.6rem;
+  -webkit-appearance: none;
+  background-color: #fff;
+  border-style: none;
+  outline: none;
+}
+.trans{ width: 0.2rem; height: 0.2rem;}
+.order_information_list_info_two>li:first-child{
+  width: 2.6rem;
+}
+
+.order_information_list_info_three>li>div:nth-of-type(1){
+   width: 2.6rem;
+   height: 1.8rem;
+   word-break: break-all;
+   word-wrap: break-word; 
+}
+.order_information_list_info_three>li>div:nth-of-type(1)>p{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.order_information_list_info_one > li>div:not(:first-child) {
+  line-height: 0.6rem;
+}

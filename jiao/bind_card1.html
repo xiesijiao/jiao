@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title>绑定银行卡1</title>
+    <link rel="stylesheet" href="./css/bind_card.css?v=3">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/media_750.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="bind_card_content">
+            <!-- 姓名部分 -->
+            <div class="bind_card_content_top">
+                <div class="bind_card_content_top_info">
+                    <div class="bind_top_one">
+                        <p>姓名</p>
+                        <input type="text" placeholder="持卡人姓名" v-model.trim="user.name" @blur="getName">
+                    </div>
+                    <div class="bind_top_two">
+                        <img src="./images/bank_card/warning.png" alt="">
+                        <p>银行卡提现需核对姓名，请输入您的真实姓名</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 银行卡部分 -->
+            <div class="bind_card_content_bottom">
+                <div class="bind_card_content_bottom_info">
+                    <div class="bind_top_one">
+                        <p>银行</p>
+                        <select class="form_div_right_se" v-model.trim="user.bank" @blur="getBank">
+                            <option value="中国银行" selected>中国银行</option>
+                            <option value="农业银行">农业银行</option>
+                            <option value="工商银行">工商银行</option>
+                            <option value="交通银行">交通银行</option>
+                        </select>
+                        <img src="./images/bank_card/down.png" alt="" class="down_img">
+                    </div>
+                    <div class="bind_top_one m">
+                        <p>银行卡号</p>
+                        <input type="text" placeholder="请输入银行卡号" v-model.trim="user.cardNumber" @blur="getCardNumber">
+                    </div>
+                    <div class="bind_top_two">
+                        <img src="./images/bank_card/warning.png" alt="">
+                        <p>仅支持储蓄卡提现</p>
+                    </div>
+                    <div class="bind_btn2" style="background-color: #ee4330;" @click="submit" v-if="user.cardNumber">
+                        <p>添加银行卡</p>
+                    </div>
+                    <div class="bind_btn" v-else @click.prevent="forbidBtn">
+                        <p>添加银行卡</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 弹窗 -->
+        <div class="card" v-if="showCard">
+            <div class="card_success">
+                <img src="./images/bank_card/success.png" alt="">
+                <p>添加成功</p>
+                <div class="success_btn" @click="successClick">
+                    <p>确定</p>
+                </div>
+            </div>
+        </div>
+        <div class="card1" v-show="failing">
+            <div class="card_center1">
+                <p>{{msg}}</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var w = new Vue({
+            el: "#app",
+            data: {
+                user: { name: "", bank: "中国银行", cardNumber: "" }, failing: false, showCard: false, msg: ""
+            },
+            watch: {
+                ['user.cardNumber'](val) {
+                    this.$nextTick(() => {
+                        this.user.cardNumber = val.replace(/\D/g, '').replace(/....(?!$)/g, '$& ');
+                    });
+                }
+            },
+            methods: {
+                getName: function () {
+                    let reg = /[\u4e00-\u9fa5]/g;
+                    if (reg.test(this.user.name) && !this.user.name == "") {
+                        return true
+                    }
+                },
+                getBank: function () {
+                    if (!this.user.bank == "") {
+                        return true
+                    }
+                },
+                getCardNumber: function () {
+                    let reg = /^([1-9]{1})(\d{23})$/;
+                    if (reg.test(w.user.cardNumber) && !w.user.cardNumber == "") {
+                        return true
+                    }
+                    if(w.user.cardNumber.length<18||w.user.cardNumber.length>24){
+                          w.failing = true
+                           w.msg = "银行卡格式有误"
+                    }else{
+                        return true
+                    }
+                    setTimeout(function () {
+                        w.failing = false
+                    }, 2000)
+
+                },
+                forbidBtn: function () {
+                    if (w.user.name == "") {
+                        w.failing = true
+                        w.msg = "请输入您的姓名"
+                    } else if (w.user.cardNumber == "") {
+                        w.failing = true
+                        w.msg = "请输入您的银行卡号"
+                    }
+                    setTimeout(function () {
+                        w.failing = false
+                    }, 2000)
+                },
+                submit: function () {
+                    if (w.getName() && w.getBank() && this.getCardNumber()) {
+                        console.log(this.user);
+                        w.showCard = true
+                    }
+                },
+                successClick: function () {
+                        w.showCard=false
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>

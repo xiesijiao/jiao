@@ -1,0 +1,22 @@
+body{
+    background-color: #d74763;
+}
+.lay_content{
+    margin: 4rem auto;
+    width: 5rem;
+    height: 1rem;
+    font-size: 0.32rem;
+    text-align: center;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: bold;
+      color: #fff;
+}
+.lay_img{
+    width: 1.6rem;
+    height: 1.1rem;
+    margin: 0 auto;
+}
+.lay_img>img{
+     width: 1.6rem;
+    height: 1.1rem;
+}

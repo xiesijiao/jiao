@@ -1,0 +1,15 @@
+#toastWaka{
+    width: 3.6rem;
+    height: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 50%;
+    left: 25%;
+    z-index: 999;
+    border-radius: 0.2rem;
+     color: #fff;
+    font-size: 0.3rem;
+    line-height: 1rem;
+    text-align: center;
+    font-family:  PingFangSC-Medium, PingFang SC;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title>店长</title>
+    <link rel="stylesheet" href="./css/info.css?v=9">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/media_750.js"></script>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <!-- 页面背景图 -->
+        <div class="manager_info_back"></div>
+        <!-- 页面内容部分 -->
+        <div class="manager_card">
+            <div class="manager_card_info">
+                <div class="manager_card_info_one">
+                    <p>店长：</p>
+                    <span>{{manager.manage_name}} </span><img src="./images/manager_info/grade.png" alt=""
+                        class="manager_card_info_one_img">
+                </div>
+                <div class="manager_card_info_two">
+                    <img src="./images/manager_info/phone.png" alt="" class="manager_card_info_two_img">
+                    <p>{{manager.manage_phone}}</p>
+                </div>
+                <div class="manager_card_info_three">
+                    <img src="./images/manager_info/location.png" alt="" class="manager_card_info_three_img">
+                    <span class="manager_card_info_three_span_one">{{manager.com_name}}</span><span
+                        class="manager_card_info_three_span">{{manager.hall_name}}</span>
+                </div>
+            </div>
+        </div>
+        <!-- 排名 -->
+        <div class="ranking_div">
+            <div class="ranking_div_left">
+                <p>排名</p>
+                <p>{{ranking.top}}</p>
+            </div>
+            <img src="./images/manager_info/cup.png" alt="" class="ranking_div_img">
+            <div class="ranking_div_content">
+                <p  v-if="ranking.top!==1">您的厅店距离上一名还差<span class="ranking_div_content_span">{{ranking.order}}</span>单</p>
+                <p v-if="ranking.top==1">您的厅店已是第<span class="ranking_div_content_span">1</span>名，请继续保持</p>
+                <p>截止2020-03-20 24:00</p>
+            </div>
+        </div>
+        <div class="manager_content">
+            <h1>厅店人员</h1>
+            <ul class="manager_content_list">
+                <li class="manager_content_list_one" v-for="(item,index) in assistant" :key=item.m_id>
+                    <div class="manager_content_list_one_div">
+                        <!-- top部分 -->
+                        <div class="manager_content_list_one_div_top">
+                            <img src="./images/manager_info/picture.png" alt=""
+                                class="manager_content_list_one_div_top_img">
+                            <div class="manager_content_list_one_div_top_content">
+                                <div class="info_div">
+                                    <span class="span_two m">{{item.m_name}}</span>
+                                    <img src="./images/manager_info/grade.png" alt="" class="info_div_img ">
+                                </div>
+                                <div class="grade_info">
+                                    <div class="grade_info_one">
+                                        <img src="./images/manager_info/grade_one.png" alt=""
+                                            class="grade_info_img1"><span>{{item.grade}}</span>
+                                    </div>
+                                    <div class="grade_info_two">
+                                        <img src="./images/manager_info/phone2.png" alt=""
+                                            class="grade_info_img2"><span>{{item.m_phone}}</span>
+                                    </div>
+                                </div>
+                            </div> <div class="button_info" @click="handleClick(index,item)" v-if="item.is_dz==false">
+                                <p>移除</p>
+                            </div>
+                            <!-- 店长标识 -->
+                            <div class="manger_img" v-if="item.is_dz==true"></div>
+                        </div>
+                        <!-- buttom部分 -->
+                        <div class="manager_content_list_one_div_buttom">
+                            <div class="indent_info_one l">
+                                <p>分销订单总数：<span>{{item.order_count}}单</span></p>
+                                <p>本月分销订单：<span>{{item.order_month}}单</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 弹窗 -->
+        <div class="card" v-show="isShow">
+            <div class="card_center">
+                <div class="card_center_top">
+                    <p>移除成员</p>
+                </div>
+                <div class="card_center_bottom">
+                    <p>是否将<span class="card_center_bottom_span">{{currItem.m_name}}</span>移除团队?</p>
+                    <div class="card_center_bottom_btn">
+                        <button class="card_center_bottom_btn_one c" @click="cancelClick">取消</button>
+                        <button class="card_center_bottom_btn_one c1" @click="removeClick(currIndex)">确定移除</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var w = new Vue({
+            el: "#app",
+            data: {
+                manager: '', assistant: [], isShow: false, ranking:{},
+                currItem: {}, currIndex: 0
+            },
+            mounted() {
+                axios.get("./js/manager.json").then(function (res) {
+                    console.log(res)
+                    w.ranking = res.data.top_hall
+                    w.manager = res.data.hall
+                    w.assistant = res.data.plist
+                })
+            },
+            methods: {
+                handleClick: function (el, wl) {
+                    console.log(el, wl);
+                    w.currItem = wl;
+                    w.currIndex = el
+                    this.isShow = true
+                },
+                cancelClick: function () {
+                    this.isShow = false
+                },
+                removeClick: function (index) {
+                    console.log(index)
+                    w.assistant.splice(index, 1);
+                    this.isShow = false;
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>

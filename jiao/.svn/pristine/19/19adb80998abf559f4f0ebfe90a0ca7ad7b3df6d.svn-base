@@ -1,0 +1,225 @@
+* {margin: 0;padding: 0;-webkit-tap-highlight-color:transparent;}
+a {text-decoration: none;color: black;}
+li {list-style: none;}
+body {background-color: #eaeaea;}
+#app {
+  -webkit-user-select: none;
+  -webkit-text-size-adjust: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+[v-cloak] {
+ display: none;
+ }
+.active_header,.active_header>img {
+  width: 100%;
+  height: 3.2rem;
+}
+.active_content {
+  width: 6.78rem;
+  background-color: #fff;
+  margin: 0.5rem auto 0.2rem;
+  border-radius: 0.2rem;
+  display: flex;
+  flex-flow: column;
+}
+.active_content > li {
+  width: 6.18rem;
+  height: 2.89rem;
+  margin: 0.2rem 0.3rem 0;
+  border-bottom: 1px solid #e8e8e8;
+  display: flex;
+}
+.active_content > li:first-child {
+  margin: 0.5rem 0.3rem 0;
+}
+.active_content>li:last-child{
+  border-bottom:none;
+  margin-bottom: 0.5rem;
+}
+.active_content_img_box {
+   width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.2rem;
+  margin-top: 0.1rem;
+}
+.active_content_img{
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.2rem;
+}
+.active_content_box {
+  width: 3.48rem;
+  height: 2.5rem;
+  margin-left: 0.2rem;
+  margin-top: 0.1rem;
+}
+.active_content_box_one {
+  width: 3.48rem;
+  height: 0.8rem;
+  font-size: 0.28rem;
+  font-family: PingFangSC-Medium,PingFang SC;
+  font-weight: 500;
+  color: rgba(51, 46, 46, 1);
+  word-break: break-all;
+  word-wrap: break-word; 
+}
+.active_content_box_one > p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+/* 券CSS */
+.active_content_box_ticket {
+     width: 3.48rem;
+     height: 0.6rem;
+      font-family: PingFangSC-Medium,PingFang SC;
+}
+.coupon {
+  position: relative;
+  height: 0.36rem;
+  white-space:nowrap;
+  width:fit-content;
+}
+.coupon_color {
+  background-image: linear-gradient(to right,#FFE78D , #FF8221);
+}
+.coupon1 {
+    font-size:0.2rem;
+    color:white;
+    text-align:center;
+    line-height:0.36rem;
+    /* margin:1px 8px 0px 8px; */
+    margin:0.03rem 0.08rem ;
+}
+.yuan1 {
+  position: absolute;
+  width: 0.15rem;
+  height: 0.15rem;
+  border-radius: 0.15rem;
+  background-color: #fff;
+  left: -0.1rem;
+  top: 0.12rem;
+}
+.yuan2 {
+  position: absolute;
+  width: 0.15rem;
+  height: 0.15rem;
+  border-radius: 0.15rem;
+  background-color: #fff;
+  right: -0.1rem;
+  top: 0.12rem;
+}
+/* 价格 */
+.orig_price_div{
+  margin-top: 0.18rem;
+}
+.orig_price {
+  font-size: 0.24rem;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  text-decoration: line-through;
+}
+.now_price {
+  width: 3.48rem;
+  height: 0.6rem;
+}
+.now_price {
+  display: flex;
+  justify-content: space-between;
+}
+.now_price_one {
+  font-size: 0.2rem;
+ font-family:DIN-BlackItalic,DIN;
+  font-weight: bold;
+  color: rgba(238, 52, 54, 1);
+  height: 0.6rem;
+  line-height: 0.6rem;
+  width: 3rem;
+  display: flex;
+}
+.now_price_one>p{
+  margin-top: 0.03rem;
+}
+
+.now_price_one_span{
+  font-size: 0.36rem;
+}
+.price_btn {
+  width: 1.4rem;
+  height: 0.6rem;
+  background-image: url("../images/activity/price_btn.png");
+  background-size: 100% 100%;
+  font-size: 0.24rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  line-height: 0.6rem;
+}
+.price_btn_disable{
+   width: 1.4rem;
+  height: 0.6rem;
+  background-color:#b1b4c6;
+   font-size: 0.24rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+   line-height: 0.6rem;
+   border-radius: 0.1rem;
+
+}
+/* .pullDown{
+  width: 6.78rem;
+  line-height: 0.4rem;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.28rem;
+  color: #5e5e5e;
+} */
+.special_content{
+   width: 6.78rem;
+    margin: 0.2rem auto ;
+}
+.special_content_img{
+  width: 6.78rem;
+  height: 2.88rem;
+  border-radius: 0.2rem;
+}
+
+.return_fix {
+  width: 1.1rem;
+  height: 1rem;
+  position: fixed;
+  bottom: 1rem;
+  right: -0.1rem;
+}
+.return_fix_box {
+  width: 1rem;
+  height: 1rem;
+  background: rgba(197, 0, 0, 1);
+  box-shadow: 0 0 0.1rem 0 rgba(0, 0, 0, 0.1);
+  opacity: 0.3;
+  font-size: 0.18rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.2rem;
+}
+.return_fix_box > img {
+  width: 0.4rem;
+  height: 0.4rem;
+  margin: 0.15rem auto 0.04rem;
+}
+.return_fix_box > p {
+  color: #fff;
+  padding-left: 0.12rem;
+  padding-right: 0.12rem;
+}

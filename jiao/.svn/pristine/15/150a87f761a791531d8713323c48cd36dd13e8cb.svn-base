@@ -1,0 +1,9 @@
+* {margin: 0;padding: 0;-webkit-tap-highlight-color:transparent;}
+a {text-decoration: none;color: black;}
+li {list-style: none;}
+#app {-webkit-user-select: none;-webkit-text-size-adjust: none;width: 100%; height: 100%;position: relative;overflow: hidden;margin: 0 auto;}
+[v-cloak] {
+ display: none;
+ }
+ .f{float: left;}
+ .r{float: right;}

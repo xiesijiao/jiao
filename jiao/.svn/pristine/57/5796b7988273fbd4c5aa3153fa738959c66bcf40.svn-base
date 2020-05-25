@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>领券</title>
+    </title>
+    <link rel="stylesheet" href="./css/personal_center.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./js/media_750.js"></script>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div class="commodity_display">
+            <img src="./img/apple2x.png" alt="">
+        </div>
+        <div class="commodity_introduce">
+            <div class="commodity_introduce_top">
+                <div class="commodity_introduce_top_div">
+                    <p class="commodity_introduce_top_div_p">「富平扶贫产品」洛川冰糖心红富士洛川苹果带箱十斤脆甜可口</p>
+                </div>
+                <ul>
+                    <li>
+                        <p class="commodity_introduce_style">数量：<span>1箱（十斤装）</span></p>
+                    </li>
+                    <li class="commodity_introduce_li">
+                        <p class="commodity_introduce_style text_style">原价<span>￥59</span></p>
+                        <p class="commodity_introduce_style_one">￥49</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="commodity_introduce_bottom">
+                <h1>电信专享券</h1>
+            </div>
+            <div class="commodity_introduce_bottom_b">
+                <div class="commodity_introduce_bottom_div1">
+                    <p class="commodity_introduce_bottom_div1_pone">满50元减10元</p>
+                    <p class="commodity_introduce_bottom_div1_two">￥10</p>
+                </div>
+                <div class="commodity_introduce_bottom_div2">
+                    <p @click="immediateBtn">立即使用</p>
+                </div>
+            </div>
+        </div>
+        <!-- 模态框1 -->
+        <div class="card" v-if="isShow">
+            <div class="card_all">
+                <div class="card_succeed">
+                    <div class="card_succeed_top">
+                         <div class="card_succeed_top_one">
+                             <p>¥Cee89075y970¥</p>
+                         </div>
+                    </div>
+                </div>
+                <div  class="card_all_div">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                isShow: false
+            },
+            methods: {
+                immediateBtn: function () {
+                   this.isShow=true
+                },
+                closeBtn:function(){
+                    this.isShow=!this.isShow  
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>

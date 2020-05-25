@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title>订单页面</title>
+    <link rel="stylesheet" href="./css/order.css?v=2">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/media_750.js"></script>
+</head>
+
+<body>
+    <div id="app" ref="scroll">
+        <div class="order_header">
+            <div>
+                <ul class="order_header_content">
+                    <li><a @click="ChangeToday(true)" :class="{active:isToday}">淘宝订单</a></li>
+                    <li><a @click="ChangeToday(false)" :class="{active:!isToday}">云商订单</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 淘宝 -->
+        <div class="order_container" v-if="isToday">
+            <ul>
+                <li  class="order_container_box" v-for="(item,index) in tbOrder" :key=item.orderid  >
+                    <div class="order_container_box_center">
+                        <div class="order_container_box_center_top">
+                            <img src="./images/order/tianmao.png" alt="" class="order_container_box_center_top_img">
+                            <span>{{item.orderid}}</span>
+                            <span>{{item.pay_time}}</span>
+                        </div>
+                        <div class="order_container_box_center_bottom">
+                            <img :src="item.img" alt="" class="order_container_box_center_bottom_img">
+                            <div class="order_container_box_center_bottom_left">
+                                <div class="order_container_box_center_bottom_left_p">
+                                    <p class="lip ">{{item.gtitle}}</p>
+                                </div>
+                                <span>¥156.9</span>
+                                <div class="normal_img">
+                                    <img src="./images/order/1.png" alt="">
+                                    <p>已付款</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- 下拉加载 -->
+                <li>
+                    <div class="pullDown">
+                        <span ref="pullUpEl" class="pullUpLabel">---上拉加载更多---</span>
+                    </div>
+                </li>
+            </ul>
+            <!-- 无订单时候展示 -->
+                <div v-if="tbOrder_null">  
+                <div class="order_container_one"></div>
+                  <p class="order_container_one_not">---暂无订单信息---</p>
+               </div>
+        </div>
+        <!-- 云商 -->
+        <div class="order_container" v-if="!isToday">
+            <ul>
+                <li class="order_container_box" v-for="(item,index) in tfOrder" :key=item.orderid>
+                    <div class="order_container_box_center">
+                        <div class="order_container_box_center_top">
+                            <img src="./images/order/tfys.png" alt="" class="order_container_box_center_top_img">
+                            <span>{{item.orderid}}</span>
+                            <span>{{item.pay_time}}</span>
+                        </div>
+                        <div class="order_container_box_center_bottom">
+                            <img :src="item.img" alt="" class="order_container_box_center_bottom_img">
+                            <div class="order_container_box_center_bottom_left">
+                                <div class="order_container_box_center_bottom_left_p">
+                                    <p class="lip ">{{item.gtitle}}</p>
+                                </div>
+                                <span>¥156.9</span>
+                                <div class="normal_img">
+                                    <img src="./images/order/1.png" alt="">
+                                    <p>已付款</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- 下拉加载 -->
+                <li>
+                    <div class="pullDown">
+                        <span ref="pullUpEl" class="pullUpLabel">---上拉加载更多---</span>
+                    </div>
+                </li>
+            </ul>
+            <!-- 无订单时候展示 -->
+            <div v-if="tbOrder_null">
+                <div class="order_container_one"></div>
+                <p class="order_container_one_not">---暂无订单信息---</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var w = new Vue({
+            el: "#app",
+            data: {
+                isToday: true, tbOrder: [], tfOrder: [], pull: "", tbOrder_null:false,
+                 heights: 0, cureItem: 0, page: 1, 
+            },
+            mounted() {
+                axios.get("./js/order.json").then(res => {
+                    if(res.data.tbinfo==0){
+                       w.tbOrder_null=true,
+                       w.$refs.pullUpEl.innerHTML = ""
+                    }else{
+                        w.tbOrder = res.data.tbinfo;
+                    }
+                    if(res.data.tfinfo==0){
+                         w.tbOrder_null = true,
+                        w.$refs.pullUpEl.innerHTML = ""
+                    }else{
+                        w.tfOrder=res.data.tfinfo
+                    }   
+                });
+                 window.onscroll = this.handleScroll
+            },
+            methods: {
+                ChangeToday: function (status) {
+                    w.isToday = status;  
+                },
+                 handleScroll() {
+                    w.heights = getScrollHeight() - getScrollTop() - getWindowHeight();
+                    console.log(w.heights);
+                    if(w.heights<20){
+                         w.$refs.pullUpEl.innerHTML = '---加载中---';   
+                    }
+                },
+            },
+        });
+        function getScrollTop() {
+                var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
+                if (document.body) bodyScrollTop = document.body.scrollTop;
+                if (document.documentElement) documentScrollTop = document.documentElement.scrollTop;
+                return (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
+            }
+            //文档的总高度
+            function getScrollHeight() {
+                var scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0;
+                if (document.body) bodyScrollHeight = document.body.scrollHeight;
+                if (document.documentElement) documentScrollHeight = document.documentElement.scrollHeight;
+                scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
+                return scrollHeight;
+            }
+            //浏览器视口的高度
+            function getWindowHeight() {
+                return "CSS1Compat" == document.compatMode ? document.documentElement.clientHeight : windowHeight = document.body.clientHeight
+            }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>个人中心</title>
+    <script src="./js/media_750.js"></script>
+    <link rel="stylesheet" href="./css/personal_center.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <div class="background_img">
+                <div class="background_img_content">
+                    <div class="user_header">
+                        <img src="./img/99999_03.gif" alt="">
+                    </div>
+                    <div class="user_info">
+                        <div class="user_info_top">
+                            <h4>刘星</h4>
+                            <span>店长</span>
+                        </div>
+                        <div class="user_info_center">
+                            <p class="user_info_center_p">成都分公司</p>
+                            <p>沙湾中路营业厅</p>
+                        </div>
+                        <div class="user_info_code">
+                            <p>店长邀请码：<span>BK6678</span></p>
+                            <button>复制</button>
+                        </div>
+                    </div>
+                    <div class="user_btn">
+                        <img src="./img/right.gif" alt="">
+                    </div>
+                </div>  
+        </div>
+        <div class="score_card">
+            <div class="score_card_top">
+                <img src="./img/121212.gif" alt="">
+            </div>
+            <div class="score_card_bottom">
+                <ul>
+                    <li>
+                        <img src="./images/person/my_store.png" alt="" class="score_card_bottom_img">
+                        <p>我的门店</p>
+                    </li>
+                    <li>
+                        <img src="./images/person/my_order.png" alt=""  class="score_card_bottom_img">
+                        <p>我的订单</p>
+                    </li>
+                    <li>
+                        <img src="./images/person/my_task.png" alt=""  class="score_card_bottom_img">
+                        <p>我的任务</p>
+                    </li>
+                    <li>
+                        <img src="./images/person/my_bankcard.png" alt=""  class="score_card_bottom_img">
+                        <p>我的银行卡</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+     
+    </div>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                isShow:false,
+                count:"",
+                timer: null,
+            },
+            methods: {
+              
+            },
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+#box {
+     height: 100%;
+     width: 100%;
+     position: relative;
+     margin: 0 auto;
+    }
+.box_success {
+    height: 7rem;
+    width: 7rem;
+    margin: 30% auto; 
+    position: relative;
+}
+.success{
+    background: url("../img/bound_success.png") no-repeat;
+     background-size: 100% 100%;
+}
+.defeated{ 
+    background: url("../img/bound_defeated1.png") no-repeat;
+     background-size: 100% 100%;
+     position: relative;
+}
+
+.box_success_defeated{
+    height: 1rem;
+    width: 3.6rem;
+    color:rgba(153,153,153,1);
+    line-height:0.28rem;
+    font-size:0.3rem;
+    position: absolute;
+    top: 5.8rem;
+    left: 1.8rem;
+}
+
+.repetition{
+     background: url("../img/bound_repetition.png") no-repeat;
+      background-size: 100% 100%;
+}

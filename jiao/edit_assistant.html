@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>店长资料修改</title>
+    <link rel="stylesheet" href="./css/edit.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./js/media_750.js"></script>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <!-- 页面导航 -->
+        <header class="header_div">
+            <div class="header_div_content">
+                <img src="./img/return.png" alt="">
+            </div>
+        </header>
+        <div class="edit_box">
+            <p class="edit_box_p">店员资料修改，厅店信息不可修改</p>
+            <div class="edit_content">
+                <form action="" @submit.prevent="submit">
+                    <!-- 姓名 -->
+                    <div class="edit_form_div">
+                        <div class="edit_form_div_left">
+                            <img src="./img/name22.png" alt="" class="name_img">
+                        </div>
+                        <div class="edit_form_div_right">
+                            <p class="edit_form_div_right_p">姓名</p>
+                            <input type="text" v-model="user.name" class="edit_form_div_right_inp" @blur="getName">
+                            <span>{{mesName}}</span>
+                        </div>
+                    </div>
+                    <!-- 电话 -->
+                    <div class="edit_form_div edit_form_div_two">
+                        <div class="edit_form_div_left">
+                            <img src="./img/1234562x.png" alt="" class="name_img">
+                        </div>
+                        <div class="edit_form_div_right">
+                            <p class="edit_form_div_right_p">电话</p>
+                            <input type="text" v-model="user.phone" class="edit_form_div_right_inp" disabled>
+                        </div>
+                    </div>
+                    <!-- 身份 -->
+                    <div class="edit_form_div edit_form_div_two">
+                        <div class="edit_form_div_left">
+                            <img src="./img/name22.png" alt="" class="name_img">
+                        </div>
+                        <div class="edit_form_div_right">
+                            <p class="edit_form_div_right_p">身份</p>
+                            <input type="text" v-model="user.post" class="edit_form_div_right_inp" disabled>
+                        </div>
+                    </div>
+                    <!-- 所属分公司 -->
+                    <div class="edit_form_div edit_form_div_two">
+                        <div class="edit_form_div_left">
+                            <img src="./img/suohsufengongsiicon@2x.png" alt="" class="name_img" >
+                        </div>
+                        <div class="edit_form_div_right">
+                            <p class="edit_form_div_right_p">所属分公司</p>
+                            <select class="edit_form_div_right_se" v-model="user.company" disabled>
+                                <option value="成都" selected>成都</option>
+                                <option value="绵阳">绵阳</option>
+                                <option value="内江">内江</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- 所属渠道 -->
+                    <div class="edit_form_div edit_form_div_two">
+                        <div class="edit_form_div_left">
+                            <img src="./img/companyicon@2x.png" alt="" class="name_img">
+                        </div>
+                        <div class="edit_form_div_right">
+                            <p class="edit_form_div_right_p">所属渠道</p>
+                            <input type="text" v-model.trim="user.agent" maxlength="9" 
+                                class="edit_form_div_right_inp"  disabled>
+                        </div>
+                    </div>
+                    <!-- 所属渠道ID -->
+                    <div class="edit_form_div edit_form_div_two">
+                        <div class="edit_form_div_left">
+                            <img src="./img/id2xicon.png" alt="" class="name_img">
+                        </div>
+                        <div class="edit_form_div_right">
+                            <p class="edit_form_div_right_p">渠道ID</p>
+                            <input type="text" name="phone" id="" v-model.trim="user.id" maxlength="9"
+                                class="edit_form_div_right_inp"  disabled>
+                        </div>
+                    </div>
+                    <!-- 所属代理商 -->
+                    <div class="edit_form_div edit_form_div_two">
+                        <div class="edit_form_div_left">
+                            <img src="./img/suohsufengongsiicon@2x.png" alt="" class="name_img">
+                        </div>
+                        <div class="edit_form_div_right">
+                            <p class="edit_form_div_right_p">所属代理商</p>
+                            <input type="text" v-model.trim="user.deputy" maxlength="9" 
+                                class="edit_form_div_right_inp"  disabled>
+                        </div>
+                    </div>
+                    <div class="submit_btn" @click.prevent="submit">确认修改</div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                user: {
+                    name: "李李李",
+                    phone: "18797777771",
+                    post: "店长",
+                    agent: "金牛区二公司",
+                    company:"成都",
+                    id: "h127H6732",
+                    deputy: "利群"
+                },
+                mesName:""
+            },
+            methods: {
+                getName: function () {
+                    let reg = /[\u4e00-\u9fa5]/g;
+                    if (reg.test(this.user.name) && !this.user.name == "") {
+                        this.mesName=""
+                        return true
+                    } else {
+                        this.mesName= "*输入有误"
+                        return false
+
+                    }
+                },
+                submit: function () {
+                    if(this.getName()){
+                        console.log(this.user.name)
+                    }
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,444 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color:transparent;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+li {
+  list-style: none;
+}
+body {
+  background-color: #eaeaea;
+}
+#app {
+  -webkit-user-select: none;
+  -webkit-text-size-adjust: none;
+  font-family: helvetica;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+[v-cloak]{
+    display: none;
+}
+/* login页面 */
+.visual_div {
+  width: 6.78rem;
+  height: 4.75rem;
+  margin: 0.5rem 0.36rem;
+}
+.visual_div > h1 {
+  font-size: 0.42rem;
+  font-family: MicrosoftYaHei-Bold, MicrosoftYaHei;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  margin-bottom: 0.5rem;
+}
+.visual_div_login {
+  width: 6.78rem;
+  height: 3.7rem;
+  background-color: #fff;
+  border-radius: 0.2rem;
+  display: flex;
+  flex-flow: column;
+}
+
+.line_style {
+  width: 6.18rem;
+  height: 1.6rem;
+  border-bottom: 1px solid #eaeaea;
+  margin: 0.3rem 0.3rem 0.15rem;
+  display: flex;
+}
+.line_style > input {
+  width: 6.18rem;
+  height: 0.77rem;
+  border-style: none;
+  outline: none;
+  font-size: 0.28rem;
+  font-family: MicrosoftYaHei-Bold, MicrosoftYaHei;
+}
+.hint_height{
+  height: 0.93rem;
+}
+.hint_div {
+  height: 0.28rem;
+  width: 6.18rem;
+  margin: 0 auto;
+  display: flex;
+}
+.hint_div_img {
+  width: 0.28rem;
+  height: 0.28rem;
+}
+.hint_div > span {
+  font-size: 0.2rem;
+  font-family: STHeitiSC-Light, STHeitiSC;
+  font-weight: 300;
+  color: rgba(255, 0, 0, 1);
+  margin-left: 0.1rem;
+}
+.visual_btn {
+  width: 6.18rem;
+  height: 1.2rem;
+  background-image: url("../images/visual/btn.png");
+  background-size: 100% 100%;
+  margin: 0.58rem auto;
+  font-size: 0.42rem;
+  font-family: STHeitiSC-Medium, STHeitiSC;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  line-height: 1rem;
+  text-align: center;
+}
+/* 数据展示页面 */
+.visual_header {
+  width: 100%;
+  height: 0.88rem;
+  background-color: #fff;
+}
+.visual_header_content {
+  width: 5.61rem;
+  height: 0.87rem;
+  margin: 0 auto;
+  font-size: 0.32rem;
+  font-family: MicrosoftYaHei;
+  color: rgba(51, 51, 51, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.visual_header_content > li{
+  height: 0.8rem;
+}
+.visual_header_content > li>a{
+  line-height: 0.8rem;
+  
+  padding-bottom: 0.21rem;
+}
+.active {
+  border-bottom: 0.03rem solid #ff0000;
+  color: #ff0000;
+}
+.container {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+/* 滑动部分 */
+.visual_scroll {
+  width: 100%;
+  height: 3rem;
+  justify-content: space-between;
+  overflow-y: hidden;
+  overflow-x: auto;
+  overflow-y: auto;
+  white-space: nowrap;
+}
+.visual_scroll>ul {
+  display: flex;
+}
+.visual_scroll>ul>li{
+   margin-top: 0.5rem;
+   margin-left: 0.2rem;
+}
+.visual_scroll>ul>li:first-child{
+   margin-top: 0.5rem;
+   margin-left: 0.36rem;
+}
+.visual_scroll::-webkit-scrollbar {
+  display: none;
+}
+.visual_scroll_div_order {
+  width: 3rem;
+  height: 2rem;
+  background-color: #fff;
+  border-radius: 0.2rem;
+  display: flex;
+  flex-flow: column;
+}
+
+.visual_scroll_div_order_one {
+  width: 2.4rem;
+  height: 0.28rem;
+  margin: 0.3rem 0.3rem 0.1rem 0.3rem;
+  font-size: 0.28rem;
+  color: #999999;
+  display: flex;
+  justify-content: space-between;
+  line-height: 0.28rem;
+}
+.visual_scroll_div_order_one > img {
+  width: 0.24rem;
+  height: 0.28rem;
+}
+.order_p {
+  font-size: 0.56rem;
+  color: #ff0000;
+  margin-left: 0.3rem;
+}
+.order_p_one {
+  font-size: 0.56rem;
+  color: #ffbf00;
+  margin-left: 0.3rem;
+}
+.grow {
+  margin-left: 0.3rem;
+  margin-top: 0.08rem;
+  font-size: 0.28rem;
+  font-family: MicrosoftYaHei;
+  color: rgba(51, 51, 51, 1);
+}
+/* 数据展示部分 */
+.visual_content {
+  width: 100%;
+  height: 10.8rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.make_content {
+  width: 6.9rem;
+  height: 10.26rem;
+}
+.make_content_one {
+  width: 6.78rem;
+  height: 4.4rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+#echarts {
+  width: 3.5rem;
+  height: 4.4rem;
+}
+.make_content_one_right {
+  width: 3.2rem;
+  height: 4.4rem;
+  margin-top: 0.4rem;
+}
+.make_content_one_right_div {
+  margin-top: 0.42rem;
+  width: 3.2rem;
+  height: 0.68rem;
+  display: flex;
+}
+
+.echart_img {
+  width: 0.82rem;
+  height: 0.82rem;
+}
+.list {
+  width: 3.02rem;
+  height: 0.82rem;
+  margin: 0.1rem auto;
+  display: flex;
+}
+.list_order_div {
+  width: 2.4rem;
+  height: 0.82rem;
+  margin-left: 0.05rem;
+  display: flex;
+  flex-flow: column;
+}
+.list_order_div > p {
+  font-size: 0.2rem;
+  font-family: MicrosoftYaHei;
+  color: rgba(153, 153, 153, 1);
+  margin-top: 0.06rem;
+}
+.list_order_div > span {
+  font-size: 0.28rem;
+   width: 2.3rem;
+  font-family: MicrosoftYaHei;
+  color: rgba(51, 51, 51, 1);
+}
+.total_div {
+  width: 1.4rem;
+  height: 1.4rem;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.06rem;
+  display: flex;
+  flex-flow: column;
+}
+.total_div > p {
+  font-size: 0.24rem;
+  margin-top: 0.26rem;
+  text-align: center;
+}
+.total_div > span {
+  font-size: 0.54rem;
+  text-align: center;
+}
+/* top排行榜 */
+.make_content_two {
+  width: 6.74rem;
+  height: 5.3rem;
+  margin-left: -0.16rem;
+}
+.top_people {
+  width: 7.18rem;
+  height: 1.9rem;
+  background-image: url("../images/visual/bankground.png");
+  background-size: 100% 100%;
+}
+.top_people_img {
+  width: 1rem;
+  height: 1.25rem;
+  margin-left: 0.51rem;
+  margin-top: 0.3rem;
+  margin-right: 0.19rem;
+  float: left;
+}
+.top_people_info {
+  width: 2.8rem;
+  height: 0.72rem;
+  margin-top: 0.59rem;
+  margin-right: 0.74rem;
+  float: left;
+  display: flex;
+  flex-flow: column;
+}
+.location_div {
+  height: 0.3rem;
+  margin-top: 0.1rem;
+  display: flex;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.location_img {
+  width: 0.18rem;
+  height: 0.22rem;
+  margin-top: -0.02rem;
+}
+.location_div > div {
+  font-size: 0.24rem;
+  font-family: STHeitiSC-Light, STHeitiSC;
+  font-weight: 300;
+  color: rgba(153, 153, 153, 1);
+  line-height: 0.3rem;
+  margin-left: 0.1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  margin-top: -0.06rem;
+}
+.top_people_info > p {
+  font-size: 0.28rem;
+  font-family: STHeitiSC-Medium, STHeitiSC;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+}
+
+.top_people_cup {
+  float: left;
+  width: 1.67rem;
+  height: 0.52rem;
+  margin-top: 0.69rem;
+  display: flex;
+}
+.top_people_cup > img {
+  width: 0.52rem;
+  height: 0.52rem;
+}
+.top_people_cup > span {
+  font-size: 0.42rem;
+  font-family: DIN-Bold, DIN;
+  font-weight: bold;
+  color: rgba(255, 191, 0, 1);
+  margin-left: 0.14rem;
+}
+/* 分公司排行榜 */
+.ranking_list {
+  width: 6.78rem;
+  height: 100%;
+  margin: 0.5rem auto 0;
+}
+.ranking_list > h1 {
+  font-size: 0.32rem;
+  font-family: MicrosoftYaHei-Bold, MicrosoftYaHei;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  margin-bottom: 0.3rem;
+}
+.ranking_list_info {
+  width: 6.78rem;
+  height: 1.5rem;
+  background-color: #fff;
+  border-radius: 0.2rem;
+  display: flex;
+}
+.ranking_list_info > li {
+  width: 2.26rem;
+  height: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+}
+.ranking_list_info > li > p {
+  margin-top: 0.42rem;
+  font-size: 0.24rem;
+  font-family: MicrosoftYaHei;
+  color: rgba(153, 153, 153, 1);
+}
+.ranking_list_info > li > span {
+  font-size: 0.32rem;
+  font-family: MicrosoftYaHei-Bold, MicrosoftYaHei;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+}
+.ranking_list_info_one {
+  margin-top: 0.2rem;
+  width: 6.78rem;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 0.2rem;
+  display: flex;
+  flex-flow: column;
+}
+.ranking_list_info_one > li {
+  width: 6.78rem;
+  height: 0.32rem;
+  margin: 0.35rem 0 0;
+  font-size: 0.28rem;
+  display: flex;
+  font-family: MicrosoftYaHei;
+  color: rgba(51, 51, 51, 1);
+
+}
+
+.ranking_list_info_one > li>div{
+  width: 2.26rem;
+  text-align: center;
+}
+
+.ranking_list_info_one > li:first-child {
+  width: 6.78rem;
+  height: 0.32rem;
+  margin: 0.5rem auto 0;
+  display: flex;
+  font-size: 0.28rem;
+  font-family: MicrosoftYaHei;
+  color: rgba(51, 51, 51, 1);
+}
+.ranking_list_info_one > li:last-child {
+  width: 6.78rem;
+  height: 0.32rem;
+  margin: 0.3rem auto 0.5rem;
+  display: flex;
+  font-size: 0.28rem;
+  font-family: MicrosoftYaHei;
+  color: rgba(51, 51, 51, 1);
+}
+.ranking_list_info_one > li>span{
+  text-align: center;
+}

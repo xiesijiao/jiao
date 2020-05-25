@@ -1,0 +1,141 @@
+body {
+  background-color: #ffffff;
+}
+.commodity_container {
+  width: 6.62rem;
+  margin: 0.4rem auto 1rem;
+}
+.commodity_display {
+  width: 6.6rem;
+  height: 6.6rem;
+  border: 1px solid #e8e8e8;
+  position: relative;
+}
+.commodity_display_img {
+  width: 6.6rem;
+  height: 6.6rem;
+}
+.return_fix {
+  width: 1.1rem;
+  height: 1rem;
+  position: fixed;
+  bottom: 1rem;
+  right: -0.1rem;
+}
+.return_fix_box {
+  width: 1rem;
+  height: 1rem;
+ background: #fff;
+ opacity: 0.8;
+ box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  font-size: 0.18rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  color: #908184;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.2rem;
+}
+.return_fix_box > img {
+  width: 0.4rem;
+  height: 0.4rem;
+  margin: 0.15rem auto 0.04rem;
+}
+.return_fix_box > p {
+  color: #908184;
+  padding-left: 0.12rem;
+  padding-right: 0.12rem;
+}
+.commodity_display_price {
+  margin-top: 0.28rem;
+  height: 0.4rem;
+
+}
+.commodity_display_price_base {
+  color: #ef3836;
+  font-family: PingFangSC-Medium, PingFang SC;
+  display: flex;
+}
+.commodity_display_price_base > p:nth-of-type(1) {
+  font-size: 0.24rem;
+  line-height: 0.6rem;
+
+}
+.commodity_display_price_base > p:nth-of-type(2) {
+  font-size: 0.2rem;
+  padding-top: 0.14rem;
+  margin-left: 0.08rem;
+}
+.commodity_display_price_base > p:nth-of-type(3) {
+  font-size: 0.4rem;
+   line-height: 0.48rem;
+  font-weight: 400;
+}
+.commodity_display_price_base > p:nth-of-type(3)>span {
+ font-size: 0.2rem;
+}
+.commodity_display_price_now {
+  margin-left: 0.54rem;
+}
+.commodity_display_price_now > P {
+  color: #979797;
+  font-size: 0.2rem;
+  line-height: 0.6rem;
+  text-decoration: line-through;
+}
+.commodity_display_norms > p {
+  font-size: 0.24rem;
+  margin-top: 0.16rem;
+  color: #979797;
+}
+/* 券 */
+.commodity_ticket {
+  margin-top: 0.34rem;
+  height: 2.18rem;
+}
+.commodity_ticket_title {
+  font-size: 0.24rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 400;
+  color: rgba(171, 171, 171, 1);
+}
+.commodity_ticket_content {
+  margin-top: 0.14rem;
+  height: 6.6rem;
+  height: 1.8rem;
+  background-image: url("../images/commodity_iteration/ticket_bg.png");
+  background-size: 100% 100%;
+}
+.commodity_ticket_content_one {
+  font-family: PingFangSC-Medium, PingFang SC;
+  color: #fff;
+  margin-left: 1.54rem;
+  margin-top: 0.24rem;
+  text-align: center;
+}
+.commodity_ticket_content_one > p:nth-of-type(1) {
+  font-size: 0.4rem;
+}
+.commodity_ticket_content_one > p:nth-of-type(1) > span {
+  font-size: 0.66rem;
+}
+.commodity_ticket_content_one > p:nth-of-type(2) {
+  font-size: 0.22rem;
+}
+.commodity_ticket_content_two {
+  font-family: PingFangSC-Medium, PingFang SC;
+  color: #fff;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-top: 0.26rem;
+  margin-right: 0.54rem;
+}
+.commodity_ticket_content_two > p {
+  font-size: 0.4rem;
+}
+.commodity_introduce {
+  margin-top: 0.4rem;
+  font-size: 0.28rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(43, 43, 43, 1);
+}

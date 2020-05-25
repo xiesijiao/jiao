@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>商品详情</title>
+    <script src="./js/public_js/vue.js"></script>
+    <script src="./js/public_js/axios.js"></script>
+    <script src="./js/media_750.js"></script>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/commodity_iteration.css">
+</head>
+<body>
+    <div id="app">
+       
+        <div class="commodity_container">
+            <!-- 商品图片 -->
+            <div class="commodity_display">
+                <img src="./images/commodity_iteration/commodity_img.png" alt="" class="commodity_display_img">
+                <div class="return_fix">
+                    <div class="return_fix_box" @click="touter">
+                        <img src="./images/commodity_iteration/return_one.png" alt="" >
+                        <p>回到首页</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 商品价格 -->
+            <div class="commodity_display_price">
+                <!-- 原价 -->
+                <div class="commodity_display_price_base f">
+                    <p>券后价</p>
+                    <p>￥</p>
+                    <p>29<span>.9</span></p>
+                </div>
+                <!-- 现价格 -->
+                <div class="commodity_display_price_now f" >
+                    <p>￥49.9</p>
+                </div>
+                <!-- 产品规格 -->
+               <div class="commodity_display_norms r">
+                    <p>规格<span>1箱12盒</span></p> 
+                </div>
+            </div>
+            <!-- 券 -->
+            <div class="commodity_ticket">
+                <p class="commodity_ticket_title">天翼奥莱专享券</p>
+                <div class="commodity_ticket_content">
+                        <div class="commodity_ticket_content_one f">
+                                <p>￥<span>20</span></p>
+                                <p>满40元立减20元</p>
+                        </div>
+                        <div class="commodity_ticket_content_two r">
+                                <p>抢券购买</p>
+                        </div>
+                </div>
+            </div>
+            <!-- 商品介绍 -->
+            <div class="commodity_introduce">
+                <p>奥莱特惠 伊利金典纯牛奶 250ml ×12盒/箱 纯牛奶 儿
+                童成人营养早餐纯牛奶</p>
+            </div>
+        </div>
+       
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{},
+            mounted() {
+                
+            },
+            methods: {
+                touter:function(){
+                    location.href = document.referrer;
+                    // window.history.back();
+                    // window.location(-1)
+                }
+            },
+        });
+    </script>
+</body>
+</html>

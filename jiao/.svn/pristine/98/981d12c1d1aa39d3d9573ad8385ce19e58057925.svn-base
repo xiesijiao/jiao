@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Document</title>
+    <script src="./js/media_750.js"></script>
+    <link rel="stylesheet" href="./css/regist.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <div class="regist_box">
+            <p class="regist_box_p">请填写以下注册信息</p>
+            <div class="regist_content">
+                <form action=""  @submit.prevent="submit">
+                    <!-- 姓名 -->
+                    <div class="form_div">
+                        <div class="form_div_left">
+                            <img src="./img/new_name.png" alt="" class="name_img">
+                        </div>
+                        <div class="form_div_right">
+                            <p class="form_div_right_p">姓名</p>
+                            <input type="text" name="name"  @blur="getName"  v-model.trim="user.name" placeholder="请输入您的姓名"
+                                class="form_div_right_inp">
+                                <span>{{mesName}}</span>
+                        </div>
+                    </div>
+                    <!-- 手机号 -->
+                    <div class="form_div">
+                        <div class="form_div_left">
+                            <img src="./img/1234562x.png" alt="" class="name_img">
+                        </div>
+                        <div class="form_div_right">
+                            <p class="form_div_right_p">手机</p>
+                            <input type="text" name="phone" maxlength="11" v-model.trim="user.phone" @blur="getPhone" placeholder="请输入您的手机号"
+                                class="form_div_right_inp">
+                                    <span>{{mesPhone}}</span>
+                        </div>
+                    </div>
+                    <!-- 验证码 -->
+                    <div class="form_div">
+                        <div class="form_div_left">
+                            <img src="./img/code555@2x.png" alt="" class="name_img">
+                        </div>
+                        <div class="form_div_right">
+                            <p class="form_div_right_p">验证码</p>
+                            <input type="text" name="user.verificationCode" id=""  @blur="getVerificationCode"  maxlength="9" v-model.trim="user.verificationCode"
+                                placeholder="请输入6位数字验证码" class="form_div_right_inp">
+                            <div v-show="timeShow" class="verification_code_btn" @click="getCode">获取验证码</div>
+                            <div v-show="!timeShow" class="verification_code_btn">{{count}}s重新获取</div>
+                        </div>
+                    </div>
+                    <!-- 协销号 -->
+                    <div class="form_div">
+                        <div class="form_div_left">
+                            <img src="./img/xiexiaohao@2x.png" alt="" class="name_img">
+                        </div>
+                        <div class="form_div_right">
+                            <p class="form_div_right_p">协销号</p>
+                            <input type="text" name="team" id="" v-model.trim="user.team" placeholder="请输入本人协销号"
+                                class="form_div_right_inp" @blur="getTeam"  maxlength="9">
+                                <span>{{mesTeam}}</span>
+                        </div>
+                    </div>
+                    <!-- 厅店邀请码 -->
+                    <div class="form_div">
+                        <div class="form_div_left">
+                            <img src="./img/yaoqingma@2x.png" alt="" class="name_img">
+                        </div>
+                        <div class="form_div_right">
+                            <p class="form_div_right_p">店长邀请码</p>
+                            <input type="text" name="invitationCode" id="" v-model.trim="user.invitationCode"
+                                placeholder="请输入店长邀请码*" class="form_div_right_inp" @blur="getInvitationCode" maxlength="9">
+                                <span>{{mesInvitationCode}}</span>
+                        </div>
+                    </div>
+                    <p class="foot_p">*店长邀请码向所属厅店店长咨询</p>
+                    <button class="submit_btn" @click.prevent="submit">注册</button>
+                </form>
+            </div>
+        </div>
+        <!-- 模态框 -->
+        <div class="card" v-if="isShow">
+            <div class="card_succeed">
+                <div class="card_succeed_top">
+                    <img src="./img/8888888.png" alt="" class="card_succeed_top_img_one">
+
+                    <button class="card_succeed_top_btn">完成</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+     var vm=   new Vue({
+            el: "#app",
+            data: {
+                user: {
+                    name: "",
+                    phone: "",
+                    verificationCode: "",
+                    team: "",
+                    invitationCode: ""
+                },
+                isShow: false,
+                mesName: "",//姓名
+                mesPhone: "",//手机
+                mesVerificationCode: "",//验证码
+                mesTeam: "",//协销号
+                mesInvitationCode: "",//厅店邀请
+                timeShow: true,
+                count: '',
+                timer: null,
+
+            },
+            methods: {
+                // 姓名
+                getName() {
+                    let reg = /[\u4e00-\u9fa5]/g;
+                    if (reg.test(this.user.name) && !this.user.name == "") {
+                        this.mesName = ""
+                      
+                        return true
+                    } else {
+                        this.mesName = "*输入有误"
+                    }
+
+                },
+                // 手机
+                getPhone() {
+                    let reg = /^1[34578]\d{9}$/;
+                    if (reg.test(this.user.phone) && !this.user.phone == "") {
+                        this.mesPhone = ""
+                        return true
+                    }
+                    else {
+                        this.mesPhone = "*输入有误"
+                    }
+                },
+                // 验证码
+                getVerificationCode() {
+                    let reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{9}$/;
+                    if (reg.test(this.user.verificationCode) && !this.user.verificationCode == "") {
+                        // this.mesVerificationCode=""
+                        return true
+                    }
+                    else {
+                        // this.mesVerificationCode = "*输入有误"
+                    }
+                },
+                // 协销号
+                getTeam() {
+                    let reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{9}$/;
+                    if (reg.test(this.user.team) && !this.user.team == "") {
+                        this.mesTeam = ""
+                        return true
+                    }
+                    else {
+                        this.mesTeam = "*输入有误"
+                    }
+                },
+                // 厅店邀请
+                getInvitationCode() {
+                    let reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{9}$/;
+                    if (reg.test(this.user.invitationCode) && !this.user.invitationCode == "") {
+                        this.mesInvitationCode = ""
+                        return true
+                    }
+                    else {
+                        this.mesInvitationCode = "*输入有误"
+                    }
+                },
+                 // 获取验证码
+               getCode() {
+                    const time_count = 60;
+                    if (!this.timer) {
+                        this.count = time_count;
+                        this.timeShow = false;
+                        this.timer = setInterval(() => {
+                            if (this.count > 0 && this.count <= time_count) {
+                                this.count--;
+                            } else {
+                                this.timeShow = true;
+                                clearInterval(this.timer);
+                                this.timer = null;
+                            }
+                        }, 1000)
+                    }
+                }, 
+                // 提交注册
+                submit() {
+                    // this.isShow = !this.isShow
+                    if (this.getName() && this.getPhone() && this.getVerificationCode() && this.getTeam() && this.getInvitationCode()) {
+                        console.log(vm.user)
+                    }
+
+                }
+
+
+            }
+        });
+    </script>
+</body>
+
+</html>

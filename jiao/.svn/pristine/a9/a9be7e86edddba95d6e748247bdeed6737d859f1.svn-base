@@ -1,0 +1,51 @@
+{
+  "city": [
+    { "rate": 0, "pv": 194, "name": "广元" },
+    { "rate": 0, "pv": 192, "name": "成都" },
+    { "rate": 0, "pv": 165, "name": "南充" },
+    { "rate": 0, "pv": 129, "name": "泸州" },
+    { "rate": 0, "pv": 125, "name": "凉山" },
+    { "rate": 0, "pv": 112, "name": "眉山" },
+    { "rate": 0, "pv": 88, "name": "巴中" },
+    { "rate": 0, "pv": 85, "name": "攀枝花" },
+    { "rate": 0, "pv": 77, "name": "自贡" },
+    { "rate": 0, "pv": 73, "name": "绵阳" },
+    { "rate": 0, "pv": 59, "name": "乐山" },
+    { "rate": 0, "pv": 42, "name": "资阳" },
+    { "rate": 0, "pv": 36, "name": "德阳" },
+    { "rate": 0, "pv": 35, "name": "宜宾" },
+    { "rate": 0, "pv": 35, "name": "雅安" },
+    { "rate": 0, "pv": 32, "name": "广安" },
+    { "rate": 0, "pv": 32, "name": "达州" },
+    { "rate": 0, "pv": 24, "name": "内江" },
+    { "rate": 0, "pv": 22, "name": "遂宁" },
+    { "rate": 0, "pv": 21, "name": "系统" },
+    { "rate": 0, "pv": 18, "name": "阿坝" },
+    { "rate": 0, "pv": 12, "name": "甘孜" }
+  ],
+  "hall": {
+    "act_1": 77,
+    "txt_100": "达标0家 0.0%",
+    "rate_50": 0.0,
+    "rate_0": 64.0,
+    "act_0": 140,
+    "hall_activity": 77,
+    "act_50": 0,
+    "rate_1": 35.0,
+    "txt_50": "达标0家 0.0%",
+    "hall_count": 217,
+    "txt_1": "达标77家 35.0%",
+    "txt_0": "未动140家 64.0%",
+    "rate_100": 0.0,
+    "act_100": 0
+  },
+  "orders": {
+    "uv": { "uv": 733, "s_uv": "环比减少169", "up": false },
+    "gmv": { "gmv": 4955, "s_gmv": "环比减少836", "up": false },
+    "activity": { "activity": 260, "s_activity": "环比减少69", "up": false },
+    "pv": { "pv": 1608, "s_pv": "环比减少416", "up": false },
+    "orders": { "s_orders": "环比增长7", "orders": 311, "up": true }
+  },
+  "pid": [],
+  "status": 0
+}

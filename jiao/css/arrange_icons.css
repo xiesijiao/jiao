@@ -1,0 +1,31 @@
+
+body {background-color: #fff;}
+.icons_content{
+    width: 6.92rem;
+    margin: 0.2rem auto;
+}
+.icons_content_info{
+     width: 6.78rem;
+     margin: 0 auto;
+}
+.icons_content_info>li{
+    width: 2rem;
+    height: 2rem;
+    float: left;
+    margin-top:0.2rem;
+    margin-left: 0.2rem; 
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 0.26rem;
+    color: #242424;
+    font-family: PingFangSC-Medium,PingFang SC;
+}
+.icons{
+    width: 1.4rem;
+    height: 1.4rem;
+    margin: 0 auto;
+}
+.icons_content_info>li>p{
+    margin-top: 0.1rem;
+}
